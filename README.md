@@ -1,54 +1,87 @@
-# React + TypeScript + Vite
+# Rubic Systems Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official website for Rubic Systems, a multidimensional data platform that democratizes high-performance analytics by making data cubes accessible to everyone.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This website is built using:
+- React + TypeScript
+- Vite for build tooling
+- Modern CSS with CSS Variables
+- Responsive design principles
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v16 or higher)
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/rubic-systems.git
+cd rubic-systems
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:5173`
+
+### Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist` directory.
+
+## Project Structure
+
+```
+homepage/
+├── public/              # Static assets
+│   ├── Arthur.jpeg     # Team member images
+│   ├── Chris.jpeg
+│   ├── logo.svg
+│   └── favicon.svg
+├── src/
+│   ├── components/     # React components
+│   ├── pages/         # Page components
+│   ├── styles/        # Global styles
+│   ├── App.tsx        # Main app component
+│   └── main.tsx       # Entry point
+└── index.html         # HTML template
+```
+
+## Development
+
+- All styles are managed through CSS variables defined in `src/styles/global.css`
+- Components are organized by feature in the `components` directory
+- Pages are in the `pages` directory
+- Images and other static assets should be placed in the `public` directory
+
+## Contributing
+
+1. Create a new branch for your feature
+2. Make your changes
+3. Submit a pull request
+
+## License
+
+All rights reserved. This source code is proprietary and confidential.
+
+## Contact
+
+For any inquiries, please contact us at contact@rubic.ltd
