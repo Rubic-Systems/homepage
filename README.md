@@ -21,8 +21,8 @@ This website is built using:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/rubic-systems.git
-cd rubic-systems
+git clone https://github.com/Rubic-Systems/homepage.git
+cd homepage
 ```
 
 2. Install dependencies:
