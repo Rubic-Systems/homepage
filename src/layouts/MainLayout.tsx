@@ -10,30 +10,31 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
   };
 
   return (
-    <div className="main-layout">
-      <header className="header">
-        <div className="container">
+    <div className='main-layout'>
+      <header className='header'>
+        <div className='container'>
           <nav>
-            <div className="logo-container">
-              <img src="/logo.svg" alt="Rubic Systems Logo" />
+            <div className='logo-container'>
+              <img src='/logo.png' alt='Rubic Systems Logo' />
               <h1>Rubic Systems</h1>
             </div>
-            <div className="nav-links">
-              <button onClick={handleContactClick} className="contact-button">
+            <div className='nav-links'>
+              <button onClick={handleContactClick} className='contact-button'>
                 Contact Us
               </button>
             </div>
           </nav>
         </div>
       </header>
-      <main className="main-content">
-        {children}
-      </main>
-      <footer className="footer">
-        <div className="container">
-          <p>&copy; {new Date().getFullYear()} Rubic Systems. All rights reserved.</p>
+      <main className='main-content'>{children}</main>
+      <footer className='footer'>
+        <div className='container'>
+          <p>
+            &copy; {new Date().getFullYear()} Rubic Systems. All rights
+            reserved.
+          </p>
         </div>
       </footer>
     </div>
   );
-}; 
+};

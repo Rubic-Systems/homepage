@@ -54,7 +54,7 @@ homepage/
 ├── public/              # Static assets
 │   ├── Arthur.jpeg     # Team member images
 │   ├── Chris.jpeg
-│   ├── logo.svg
+│   ├── logo.png
 │   └── favicon.svg
 ├── src/
 │   ├── components/     # React components
