@@ -58,7 +58,7 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
                       onClick={() => {
                         const subdomain = window.location.hostname.includes('localhost') 
                           ? 'http://jotwell.localhost:5173' 
-                          : 'https://jotwell.rubic.ltd';
+                          : 'https://jotwell.rubicsystems.com';
                         window.location.href = subdomain;
                       }}
                       className='dropdown-item'
