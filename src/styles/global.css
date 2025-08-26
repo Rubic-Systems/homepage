@@ -842,6 +842,10 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-2);
+  /* Add contrasting stroke for visibility */
+  -webkit-text-stroke: 2px var(--accent-blue-deep);
+  text-stroke: 2px var(--accent-blue-deep);
+  paint-order: stroke fill;
 }
 
 .approach-item h3 {
