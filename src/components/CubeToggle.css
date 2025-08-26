@@ -1,0 +1,94 @@
+.cube-toggle {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+  margin-left: 12px;
+}
+
+.cube-toggle:hover {
+  transform: scale(1.1);
+}
+
+.cube-toggle:focus-visible {
+  outline: 2px solid var(--accent-blue-deep);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.cube-container {
+  width: 100%;
+  height: 100%;
+  perspective: 200px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotateX(-30deg) rotateY(45deg);
+}
+
+/* Dark mode transformation - vertical flip to show opposite faces */
+.cube-toggle.dark-mode .cube {
+  transform: rotateX(150deg) rotateY(45deg) scale(0.9);
+}
+
+/* Cube faces base styles */
+.face {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: visible;
+}
+
+/* Light mode visible faces - Front, Top, Right - Fixed light colors */
+.face.front {
+  background: #E0F2FE;  /* Light blue - brightest face */
+  border: 1px solid #0EA5E9;
+  transform: rotateY(0deg) translateZ(7px);
+}
+
+.face.top {
+  background: #7DD3FC;  /* Medium blue */
+  border: 1px solid #0EA5E9;
+  transform: rotateX(90deg) translateZ(7px);
+}
+
+.face.right {
+  background: #BAE6FD;  /* Soft blue */
+  border: 1px solid #0EA5E9;
+  transform: rotateY(90deg) translateZ(7px);
+}
+
+/* Dark mode visible faces (hidden in light mode) - Back, Bottom, Left - Fixed dark colors */
+.face.back {
+  background: #0369A1;  /* Dark blue */
+  border: 1px solid #7DD3FC;
+  transform: rotateY(180deg) translateZ(7px);
+}
+
+.face.bottom {
+  background: #0369A1;  /* Dark blue */
+  border: 1px solid #7DD3FC;
+  transform: rotateX(-90deg) translateZ(7px);
+}
+
+.face.left {
+  background: #38BDF8;  /* Bright cyan - brightest of dark faces */
+  border: 1px solid #7DD3FC;
+  transform: rotateY(-90deg) translateZ(7px);
+}
+
+
+/* Removed idle animation to prevent transition interruption */

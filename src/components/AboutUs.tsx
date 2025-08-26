@@ -4,12 +4,12 @@ const AboutUs = () => {
       <div className="container">
         <h2>About Us</h2>
         <p className="about-intro">
-          Founded by data experts with a mission to make complex analytics accessible to everyone.
+          A boutique consultancy founded by technical experts who believe in solving complex problems with elegant solutions.
         </p>
         <div className="team-grid">
           <div className="team-member">
             <div className="member-image">
-              <img src="/Arthur.jpeg" alt="Arthur Jin" />
+              <img src="/Arthur.jpeg" alt="Arthur Jin - Co-Founder & CTO" loading="lazy" />
             </div>
             <div className="member-content">
               <h3>Arthur Jin</h3>
@@ -22,7 +22,7 @@ const AboutUs = () => {
 
           <div className="team-member">
             <div className="member-image">
-              <img src="/Chris.jpeg" alt="Chris Antico" />
+              <img src="/Chris.jpeg" alt="Chris Antico - Co-Founder & CEO" loading="lazy" />
             </div>
             <div className="member-content">
               <h3>Chris Antico</h3>

@@ -1,0 +1,307 @@
+/* Jotwell Page Styles */
+.jotwell-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Hero Section */
+.jotwell-hero {
+  position: relative;
+  padding: 120px 20px 80px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.jotwell-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.app-icon {
+  display: inline-flex;
+  margin-bottom: 30px;
+}
+
+.app-icon-placeholder {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 27%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: #667eea;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.jotwell-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.jotwell-tagline {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 20px;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.jotwell-description {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 40px;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-store-button {
+  background: black;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+}
+
+.app-store-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.app-store-logo {
+  display: block;
+}
+
+/* Features Section */
+.jotwell-features {
+  background: white;
+  padding: 80px 20px;
+}
+
+.jotwell-features h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 60px;
+  color: #333;
+  font-weight: 700;
+}
+
+.jotwell-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.jotwell-feature {
+  text-align: center;
+  padding: 20px;
+}
+
+.jotwell-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.jotwell-feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.jotwell-feature p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Use Cases Section */
+.jotwell-use-cases {
+  background: #f8f9fa;
+  padding: 80px 20px;
+}
+
+.jotwell-use-cases h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 700;
+}
+
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.use-case {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.use-case:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.use-case h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.use-case p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.jotwell-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.jotwell-cta h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.jotwell-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.app-store-button-large {
+  background: black;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.app-store-button-large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.requirements {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+
+/* Footer */
+.jotwell-footer {
+  background: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.jotwell-footer a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.jotwell-footer a:hover {
+  color: #764ba2;
+}
+
+.footer-links {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  margin: 0 10px;
+}
+
+/* Container utility */
+.jotwell-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .jotwell-hero {
+    padding: 80px 20px 60px;
+  }
+  
+  .app-icon-placeholder {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+  }
+  
+  .jotwell-features-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .jotwell-features,
+  .jotwell-use-cases,
+  .jotwell-cta {
+    padding: 60px 20px;
+  }
+}
+
+/* Dark mode support */
+[data-theme="dark"] .jotwell-features {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .jotwell-features h2,
+[data-theme="dark"] .jotwell-feature h3,
+[data-theme="dark"] .use-case h3 {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .jotwell-feature p,
+[data-theme="dark"] .use-case p {
+  color: #b0b0b0;
+}
+
+[data-theme="dark"] .jotwell-use-cases {
+  background: #0f0f0f;
+}
+
+[data-theme="dark"] .use-case {
+  background: #1a1a1a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .use-case:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
