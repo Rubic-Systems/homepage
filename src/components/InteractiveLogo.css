@@ -6,11 +6,6 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: transform 0.3s ease;
-}
-
-.interactive-logo:hover {
-  transform: scale(1.05);
 }
 
 .interactive-logo:focus-visible {
@@ -187,15 +182,4 @@
 .interactive-logo.dark-mode .cube-face.outer-bottom {
   background: rgba(15, 15, 30, 0.2);
   border-color: #374151;
-}
-
-
-/* Hint animation on first load */
-@keyframes hint-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.interactive-logo:not(.clicked) {
-  animation: hint-pulse 2s ease-in-out 2;
 }

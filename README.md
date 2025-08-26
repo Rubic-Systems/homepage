@@ -81,7 +81,6 @@ homepage/
 ├── src/
 │   ├── components/     # React components
 │   │   ├── InteractiveLogo.tsx  # 3D animated logo
-│   │   ├── CubeToggle.tsx       # Cube UI component
 │   │   ├── GeometricPattern.tsx # Visual patterns
 │   │   └── ErrorBoundary.tsx    # Error handling
 │   ├── contexts/       # React contexts

@@ -36,9 +36,9 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       <header className='header' role='banner'>
         <div className='container'>
           <nav aria-label='Main navigation'>
-            <div className='logo-container' onClick={() => window.location.href = '/'} style={{ cursor: 'pointer' }}>
+            <div className='logo-container'>
               <InteractiveLogo />
-              <h1>Rubic Systems</h1>
+              <h1 onClick={() => window.location.href = '/'} style={{ cursor: 'pointer' }}>Rubic Systems</h1>
             </div>
             <div className='nav-links'>
               <div className='dropdown' ref={dropdownRef}>
