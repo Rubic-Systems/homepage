@@ -57,12 +57,7 @@ export const Jotwell = () => {
               learn faster and retain more.
             </p>
             <button className="app-store-button" onClick={handleAppStoreClick}>
-              <svg className="app-store-logo" viewBox="0 0 120 40" width="120" height="40">
-                <rect width="120" height="40" rx="6" fill="black"/>
-                <text x="60" y="25" textAnchor="middle" fill="white" fontSize="12" fontFamily="system-ui">
-                  Coming Soon
-                </text>
-              </svg>
+              <span className="button-text">Coming Soon</span>
             </button>
           </div>
         </div>
@@ -93,11 +88,42 @@ export const Jotwell = () => {
               </ul>
             </div>
             <div className="feature-visual">
-              <div className="device-mockup ipad">
-                <div className="device-screen">
-                  <div className="annotation-demo">
-                    {/* Animated annotation preview */}
+              <div className="annotation-demo">
+                <div className="textbook-page">
+                  <div className="text-line"></div>
+                  <div className="text-line"></div>
+                  <div className="text-line short"></div>
+                  
+                  <div className="textbook-image-section">
+                    <div className="textbook-image"></div>
+                    <div className="image-text-wrap">
+                      <div className="text-line"></div>
+                      <div className="text-line"></div>
+                      <div className="text-line short"></div>
+                    </div>
                   </div>
+                  
+                  <div className="text-line with-circle">
+                    <svg className="hand-drawn-circle" viewBox="0 0 120 30" preserveAspectRatio="none">
+                      <path 
+                        d="M 10,15 Q 15,8 30,7 T 60,8 Q 85,9 95,15 Q 96,20 85,23 Q 70,24 50,23 T 15,22 Q 8,19 10,15"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        className="circle-path"
+                      />
+                    </svg>
+                  </div>
+                  <div className="text-line"></div>
+                  
+                  <div className="textbook-figure">
+                    <div className="figure-box"></div>
+                    <div className="caption-line"></div>
+                  </div>
+                  
+                  <div className="text-line"></div>
+                  <div className="text-line short"></div>
                 </div>
               </div>
             </div>
@@ -227,7 +253,6 @@ export const Jotwell = () => {
               <h3>Import</h3>
               <p>Add PDFs from Files, email, or any app</p>
             </div>
-            <div className="workflow-connector"></div>
             <div className="workflow-step">
               <div className="step-number">2</div>
               <div className="step-icon">
@@ -239,7 +264,6 @@ export const Jotwell = () => {
               <h3>Annotate</h3>
               <p>Mark up with Apple Pencil or touch</p>
             </div>
-            <div className="workflow-connector"></div>
             <div className="workflow-step">
               <div className="step-number">3</div>
               <div className="step-icon">
@@ -356,12 +380,7 @@ export const Jotwell = () => {
           <h2>Be Among the First to Experience Jotwell</h2>
           <p>Sign up for early access and shape the future of digital learning</p>
           <button className="app-store-button-large" onClick={handleAppStoreClick}>
-            <svg className="app-store-logo" viewBox="0 0 140 48" width="140" height="48">
-              <rect width="140" height="48" rx="8" fill="black"/>
-              <text x="70" y="28" textAnchor="middle" fill="white" fontSize="14" fontFamily="system-ui">
-                Join Beta Waitlist
-              </text>
-            </svg>
+            <span className="button-text">Join Beta Waitlist</span>
           </button>
           <p className="requirements">
             Requires iOS 17.0 or later • Optimized for iPad with Apple Pencil
@@ -377,7 +396,15 @@ export const Jotwell = () => {
             <a href="mailto:support@jotwell.app">support@jotwell.app</a>
           </p>
           <p className="footer-links">
-            <a href="/privacy">Privacy Policy</a> • <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a> • <a href="/terms">Terms of Service</a> • 
+            <a href="/" className="rubic-logo-link" aria-label="Back to Rubic Systems">
+              A product by Rubic Systems, LLC.
+              <img 
+                src="/RS_logo-nobg.png" 
+                alt="Rubic Systems Logo" 
+                className="rubic-footer-logo"
+              />
+            </a>
           </p>
         </div>
       </section>
