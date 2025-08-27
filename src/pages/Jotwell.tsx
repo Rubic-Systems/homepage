@@ -91,8 +91,35 @@ export const Jotwell = () => {
               <div className="annotation-demo">
                 <div className="textbook-page">
                   <div className="text-line"></div>
-                  <div className="text-line"></div>
-                  <div className="text-line short"></div>
+                  
+                  {/* Text line with wavy underline */}
+                  <div className="text-line with-underline">
+                    <svg className="wavy-underline drawing-2" viewBox="0 0 50 20" preserveAspectRatio="none">
+                      <path 
+                        d="M 5,15 Q 10,12 15,15 T 25,15 T 35,15 T 45,15"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        className="underline-path"
+                      />
+                    </svg>
+                  </div>
+                  
+                  {/* Text line with star in margin */}
+                  <div className="text-line short with-star">
+                    <svg className="star-mark drawing-3" viewBox="0 0 30 30">
+                      <path 
+                        d="M 15,5 L 18,12 L 25,12 L 19,17 L 22,24 L 15,19 L 8,24 L 11,17 L 5,12 L 12,12 Z"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="star-path"
+                      />
+                    </svg>
+                  </div>
                   
                   <div className="textbook-image-section">
                     <div className="textbook-image"></div>
@@ -103,8 +130,9 @@ export const Jotwell = () => {
                     </div>
                   </div>
                   
+                  {/* Text line with circle annotation */}
                   <div className="text-line with-circle">
-                    <svg className="hand-drawn-circle" viewBox="0 0 120 30" preserveAspectRatio="none">
+                    <svg className="hand-drawn-circle drawing-1" viewBox="0 0 120 30" preserveAspectRatio="none">
                       <path 
                         d="M 10,15 Q 15,8 30,7 T 60,8 Q 85,9 95,15 Q 96,20 85,23 Q 70,24 50,23 T 15,22 Q 8,19 10,15"
                         fill="none"
@@ -115,7 +143,20 @@ export const Jotwell = () => {
                       />
                     </svg>
                   </div>
-                  <div className="text-line"></div>
+                  
+                  {/* Text line with exclamation */}
+                  <div className="text-line with-exclamation">
+                    <svg className="exclamation-mark drawing-4" viewBox="0 0 20 40">
+                      <path 
+                        d="M 10,5 L 10,22 M 10,28 L 10,30"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        className="exclamation-path"
+                      />
+                    </svg>
+                  </div>
                   
                   <div className="textbook-figure">
                     <div className="figure-box"></div>
@@ -123,7 +164,16 @@ export const Jotwell = () => {
                   </div>
                   
                   <div className="text-line"></div>
-                  <div className="text-line short"></div>
+                  
+                  {/* Bottom area with smiley */}
+                  <div className="text-line short">
+                    <svg className="smiley-face drawing-5" viewBox="0 0 40 40">
+                      <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="2" className="smiley-circle"/>
+                      <circle cx="14" cy="15" r="2" fill="currentColor" className="smiley-eye-left"/>
+                      <circle cx="26" cy="15" r="2" fill="currentColor" className="smiley-eye-right"/>
+                      <path d="M 12,24 Q 20,30 28,24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="smiley-mouth"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
