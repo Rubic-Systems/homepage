@@ -548,10 +548,29 @@
   z-index: 2;
 }
 
-.star-path {
-  stroke-dasharray: 80;
-  stroke-dashoffset: 80;
-  animation: drawStar 11s ease-in-out infinite;
+.star-line-1,
+.star-line-2,
+.star-line-3,
+.star-line-4,
+.star-line-5 {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+}
+
+.star-line-1 { 
+  animation: drawStarLine1 11s ease-in-out infinite;
+}
+.star-line-2 { 
+  animation: drawStarLine2 11s ease-in-out infinite;
+}
+.star-line-3 { 
+  animation: drawStarLine3 11s ease-in-out infinite;
+}
+.star-line-4 { 
+  animation: drawStarLine4 11s ease-in-out infinite;
+}
+.star-line-5 { 
+  animation: drawStarLine5 11s ease-in-out infinite;
 }
 
 /* Drawing 5: Exclamation mark */
@@ -567,10 +586,15 @@
   z-index: 2;
 }
 
-.exclamation-path {
-  stroke-dasharray: 30;
-  stroke-dashoffset: 30;
-  animation: drawExclamation 11s ease-in-out infinite;
+.exclamation-line {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: drawExclamationLine 11s ease-in-out infinite;
+}
+
+.exclamation-dot {
+  opacity: 0;
+  animation: drawExclamationDot 11s ease-in-out infinite;
 }
 
 /* Drawing 6: Smiley face */
@@ -587,21 +611,25 @@
 }
 
 .smiley-circle {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: drawSmiley 11s ease-in-out infinite;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: drawSmileyCircle 11s ease-in-out infinite;
   fill: none;
 }
 
-.smiley-eye-left,
+.smiley-eye-left {
+  opacity: 0;
+  animation: drawSmileyEyeLeft 11s ease-in-out infinite;
+}
+
 .smiley-eye-right {
   opacity: 0;
-  animation: drawSmileyEyes 11s ease-in-out infinite;
+  animation: drawSmileyEyeRight 11s ease-in-out infinite;
 }
 
 .smiley-mouth {
-  stroke-dasharray: 30;
-  stroke-dashoffset: 30;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
   animation: drawSmileyMouth 11s ease-in-out infinite;
 }
 
@@ -630,27 +658,115 @@
   }
 }
 
-/* Star animation - 2s delay, 1s draw, 7s hold, 1s fade */
-@keyframes drawStar {
-  /* Hidden for 2 seconds (0% to 18.18%) */
+/* Star line 1 - starts at 2s, draws for 0.2s */
+@keyframes drawStarLine1 {
   0%, 18.18% {
-    stroke-dashoffset: 80;
+    stroke-dashoffset: 20;
     opacity: 0;
   }
-  /* Fade in and draw over 1 second (18.18% to 27.27%) */
-  22.73% {
+  18.5% {
+    opacity: 1;
+  }
+  20% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  90.91% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Star line 2 - starts at 2.2s, draws for 0.2s */
+@keyframes drawStarLine2 {
+  0%, 20% {
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+  20.3% {
+    opacity: 1;
+  }
+  21.82% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  90.91% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Star line 3 - starts at 2.4s, draws for 0.2s */
+@keyframes drawStarLine3 {
+  0%, 21.82% {
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+  22.12% {
+    opacity: 1;
+  }
+  23.64% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  90.91% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Star line 4 - starts at 2.6s, draws for 0.2s */
+@keyframes drawStarLine4 {
+  0%, 23.64% {
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+  23.94% {
+    opacity: 1;
+  }
+  25.45% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  90.91% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+/* Star line 5 - starts at 2.8s, draws for 0.2s */
+@keyframes drawStarLine5 {
+  0%, 25.45% {
+    stroke-dashoffset: 20;
+    opacity: 0;
+  }
+  25.76% {
     opacity: 1;
   }
   27.27% {
     stroke-dashoffset: 0;
     opacity: 1;
   }
-  /* Hold for 7 seconds (27.27% to 90.91%) */
   90.91% {
     stroke-dashoffset: 0;
     opacity: 1;
   }
-  /* Fade out over 1 second (90.91% to 100%) */
   100% {
     stroke-dashoffset: 0;
     opacity: 0;
@@ -685,48 +801,67 @@
 }
 
 /* Exclamation animation - 6s delay, 1s draw, 3s hold, 1s fade */
-@keyframes drawExclamation {
+@keyframes drawExclamationLine {
   /* Hidden for 6 seconds (0% to 54.55%) */
   0%, 54.55% {
-    stroke-dashoffset: 30;
+    stroke-dashoffset: 20;
     opacity: 0;
   }
-  /* Fade in and draw over 1 second (54.55% to 63.64%) */
-  59.09% {
+  /* Fade in and draw over 0.5 seconds (54.55% to 59.09%) */
+  56.82% {
     opacity: 1;
   }
-  63.64% {
+  59.09% {
     stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  /* Hold for 3.5 seconds (59.09% to 90.91%) */
+  90.91% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  /* Fade out over 1 second (90.91% to 100%) */
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes drawExclamationDot {
+  /* Hidden for 6.5 seconds (0% to 59.09%) */
+  0%, 59.09% {
+    opacity: 0;
+  }
+  /* Appear instantly at 6.5 seconds (59.09% to 63.64%) */
+  63.64% {
     opacity: 1;
   }
   /* Hold for 3 seconds (63.64% to 90.91%) */
   90.91% {
-    stroke-dashoffset: 0;
     opacity: 1;
   }
   /* Fade out over 1 second (90.91% to 100%) */
   100% {
-    stroke-dashoffset: 0;
     opacity: 0;
   }
 }
 
-/* Smiley animation - 8s delay, 1s draw, 1s hold, 1s fade */
-@keyframes drawSmiley {
+/* Smiley animation - 8s delay, 2s total draw time, 1s fade */
+@keyframes drawSmileyCircle {
   /* Hidden for 8 seconds (0% to 72.73%) */
   0%, 72.73% {
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 120;
     opacity: 0;
   }
-  /* Fade in and draw over 1 second (72.73% to 81.82%) */
-  77.27% {
+  /* Fade in and draw circle over 0.5 seconds (72.73% to 77.27%) */
+  75% {
     opacity: 1;
   }
-  81.82% {
+  77.27% {
     stroke-dashoffset: 0;
     opacity: 1;
   }
-  /* Hold for 1 second (81.82% to 90.91%) */
+  /* Hold until fade (77.27% to 90.91%) */
   90.91% {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -738,12 +873,31 @@
   }
 }
 
-@keyframes drawSmileyEyes {
-  /* Hidden for 8.5 seconds */
+@keyframes drawSmileyEyeLeft {
+  /* Hidden for 8.5 seconds (0% to 77.27%) */
   0%, 77.27% {
     opacity: 0;
   }
-  /* Appear during smiley draw */
+  /* Appear instantly at 8.5 seconds */
+  79.55% {
+    opacity: 1;
+  }
+  /* Hold visible */
+  90.91% {
+    opacity: 1;
+  }
+  /* Fade out */
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes drawSmileyEyeRight {
+  /* Hidden for 8.75 seconds (0% to 79.55%) */
+  0%, 79.55% {
+    opacity: 0;
+  }
+  /* Appear instantly at 8.75 seconds */
   81.82% {
     opacity: 1;
   }
@@ -758,13 +912,16 @@
 }
 
 @keyframes drawSmileyMouth {
-  /* Hidden for 8.5 seconds */
-  0%, 77.27% {
-    stroke-dashoffset: 30;
+  /* Hidden for 9 seconds (0% to 81.82%) */
+  0%, 81.82% {
+    stroke-dashoffset: 25;
     opacity: 0;
   }
-  /* Draw and fade in */
-  81.82% {
+  /* Draw and fade in over 0.5 seconds (81.82% to 86.36%) */
+  84.09% {
+    opacity: 1;
+  }
+  86.36% {
     stroke-dashoffset: 0;
     opacity: 1;
   }
@@ -801,7 +958,8 @@
   .underline-path,
   .star-path,
   .arrow-path,
-  .exclamation-path,
+  .exclamation-line,
+  .exclamation-dot,
   .smiley-circle,
   .smiley-mouth,
   .smiley-eye-left,

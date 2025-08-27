@@ -110,13 +110,44 @@ export const Jotwell = () => {
                   <div className="text-line short with-star">
                     <svg className="star-mark drawing-3" viewBox="0 0 30 30">
                       <path 
-                        d="M 15,5 L 18,12 L 25,12 L 19,17 L 22,24 L 15,19 L 8,24 L 11,17 L 5,12 L 12,12 Z"
+                        d="M 15,7 L 15,23"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="1.5"
                         strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="star-path"
+                        className="star-line-1"
+                      />
+                      <path 
+                        d="M 7,11 L 23,19"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        className="star-line-2"
+                      />
+                      <path 
+                        d="M 23,11 L 7,19"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        className="star-line-3"
+                      />
+                      <path 
+                        d="M 8,14 L 22,14"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        className="star-line-4"
+                      />
+                      <path 
+                        d="M 10,20 L 20,10"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        className="star-line-5"
                       />
                     </svg>
                   </div>
@@ -148,12 +179,19 @@ export const Jotwell = () => {
                   <div className="text-line with-exclamation">
                     <svg className="exclamation-mark drawing-4" viewBox="0 0 20 40">
                       <path 
-                        d="M 10,5 L 10,22 M 10,28 L 10,30"
+                        d="M 9.5,5 Q 10,13 10.5,22"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="3"
                         strokeLinecap="round"
-                        className="exclamation-path"
+                        className="exclamation-line"
+                      />
+                      <circle 
+                        cx="10" 
+                        cy="29" 
+                        r="2"
+                        fill="currentColor"
+                        className="exclamation-dot"
                       />
                     </svg>
                   </div>
@@ -168,10 +206,10 @@ export const Jotwell = () => {
                   {/* Bottom area with smiley */}
                   <div className="text-line short">
                     <svg className="smiley-face drawing-5" viewBox="0 0 40 40">
-                      <circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" strokeWidth="2" className="smiley-circle"/>
+                      <path d="M 5.5,20 Q 5,10 14,6 T 35,20 Q 35,30 26,34 T 5.5,20" fill="none" stroke="currentColor" strokeWidth="2" className="smiley-circle"/>
                       <circle cx="14" cy="15" r="2" fill="currentColor" className="smiley-eye-left"/>
                       <circle cx="26" cy="15" r="2" fill="currentColor" className="smiley-eye-right"/>
-                      <path d="M 12,24 Q 20,30 28,24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="smiley-mouth"/>
+                      <path d="M 12,24 Q 18,31 28,23.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="smiley-mouth"/>
                     </svg>
                   </div>
                 </div>
