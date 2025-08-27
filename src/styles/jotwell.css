@@ -214,6 +214,11 @@
   color: black;
 }
 
+[data-theme="dark"] .jotwell-hero .app-icon-placeholder {
+  background: black;
+  color: var(--jotwell-primary);
+}
+
 .jotwell-hero-content {
   position: relative;
   z-index: 2;
@@ -951,6 +956,12 @@
   text-align: center;
 }
 
+/* Dark mode CTA section */
+[data-theme="dark"] .jotwell-cta {
+  background: linear-gradient(135deg, var(--jotwell-primary) 0%, var(--jotwell-primary-dark) 100%);
+  color: black;
+}
+
 .jotwell-cta .container {
   display: flex;
   flex-direction: column;
@@ -1142,6 +1153,21 @@
 
 [data-theme="dark"] .author-role {
   color: #888;
+}
+
+/* Fix hero and CTA text colors in dark mode - these must come after global rules */
+[data-theme="dark"] .jotwell-hero h1,
+[data-theme="dark"] .jotwell-hero h2,
+[data-theme="dark"] .jotwell-hero p,
+[data-theme="dark"] .jotwell-hero .jotwell-title,
+[data-theme="dark"] .jotwell-hero .jotwell-tagline,
+[data-theme="dark"] .jotwell-hero .jotwell-description {
+  color: black;
+}
+
+[data-theme="dark"] .jotwell-cta h2,
+[data-theme="dark"] .jotwell-cta p {
+  color: black;
 }
 
 [data-theme="dark"] .device-screen,
