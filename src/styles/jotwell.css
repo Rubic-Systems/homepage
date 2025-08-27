@@ -1202,6 +1202,10 @@
   z-index: 1;
 }
 
+[data-theme="dark"] .step-number {
+  color: black;
+}
+
 .step-icon {
   background: linear-gradient(135deg, var(--jotwell-bg-tertiary), var(--jotwell-surface-elevated));
   border-radius: var(--radius-xl);
@@ -1388,6 +1392,11 @@
   color: white;
   font-weight: bold;
   flex-shrink: 0;
+}
+
+[data-theme="dark"] .author-avatar {
+  background: linear-gradient(135deg, var(--jotwell-primary), var(--jotwell-primary-dark));
+  color: black;
 }
 
 .author-name {

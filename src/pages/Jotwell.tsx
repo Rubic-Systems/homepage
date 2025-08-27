@@ -485,10 +485,10 @@ export const Jotwell = () => {
           </p>
           <p className="footer-links">
             <a href="/privacy">Privacy Policy</a> • <a href="/terms">Terms of Service</a> • 
-            <a href="/" className="rubic-logo-link" aria-label="Back to Rubic Systems">
+            <a href="https://rubicsystems.com" className="rubic-logo-link" aria-label="Back to Rubic Systems">
               A product by Rubic Systems, LLC.
               <img 
-                src="/RS_logo-nobg.png" 
+                src="/RS_icon-nobg.png" 
                 alt="Rubic Systems Logo" 
                 className="rubic-footer-logo"
               />
