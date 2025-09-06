@@ -9,6 +9,14 @@ export const Jotwell = () => {
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
+    
+    // Add class to body for subdomain-specific styling
+    document.body.classList.add('jotwell-subdomain');
+    
+    // Cleanup: remove class when component unmounts
+    return () => {
+      document.body.classList.remove('jotwell-subdomain');
+    };
   }, []);
 
   const handleAppStoreClick = () => {

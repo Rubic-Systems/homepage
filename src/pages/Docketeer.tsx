@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import '../styles/dockerteer.css';
+import '../styles/docketeer.css';
 
 interface RepoData {
   stars: number;
@@ -8,12 +8,15 @@ interface RepoData {
   size: string;
 }
 
-export const Dockerteer = () => {
+export const Docketeer = () => {
   const { theme, toggleTheme } = useTheme();
   const [repoData, setRepoData] = useState<RepoData>({ stars: 0, license: '', size: '' });
   
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Add class to body for subdomain-specific styling
+    document.body.classList.add('docketeer-subdomain');
     
     // Fetch GitHub repo data
     fetch('https://api.github.com/repos/open-source-labs/Docketeer-Extension')
@@ -39,6 +42,11 @@ export const Dockerteer = () => {
       .catch(() => {
         // Silently fail - will show "..." in UI
       });
+    
+    // Cleanup: remove class when component unmounts
+    return () => {
+      document.body.classList.remove('docketeer-subdomain');
+    };
   }, []);
 
   const handleGitHubClick = () => {
@@ -50,9 +58,9 @@ export const Dockerteer = () => {
   };
 
   return (
-    <div className="dockerteer-page">
+    <div className="docketeer-page">
       {/* Compact Hero Section */}
-      <section className="dockerteer-hero-compact">
+      <section className="docketeer-hero-compact">
         <button
           className="theme-toggle"
           onClick={toggleTheme}
@@ -80,9 +88,9 @@ export const Dockerteer = () => {
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
-              <h1 className="dockerteer-title">Docketeer</h1>
-              <p className="dockerteer-subtitle">Docker Desktop Extension</p>
-              <p className="dockerteer-description">
+              <h1 className="docketeer-title">Docketeer</h1>
+              <p className="docketeer-subtitle">Docker Desktop Extension</p>
+              <p className="docketeer-description">
                 A developer-friendly application that provides a single interface for container and network 
                 management as well as metric visualization. Integrates seamlessly with Prometheus, Grafana, 
                 and cAdvisor for comprehensive monitoring.
@@ -124,7 +132,7 @@ export const Dockerteer = () => {
       </section>
 
       {/* Core Features */}
-      <section className="dockerteer-features-compact">
+      <section className="docketeer-features-compact">
         <div className="container">
           <h2>How It Works</h2>
           <div className="workflow-simple">
@@ -250,7 +258,7 @@ export const Dockerteer = () => {
       </section>
 
       {/* Installation Guide */}
-      <section className="dockerteer-quickstart">
+      <section className="docketeer-quickstart">
         <div className="container">
           <h2>Installation Guide</h2>
           <div className="quickstart-grid">
@@ -266,7 +274,6 @@ export const Dockerteer = () => {
                 </div>
                 <div className="install-steps">
                   <div className="step">
-                    <span className="step-number">1</span>
                     <div className="step-content">
                       <strong>Prerequisites</strong>
                       <p>Install Docker Desktop v4.40 or later</p>
@@ -276,21 +283,18 @@ export const Dockerteer = () => {
                     </div>
                   </div>
                   <div className="step">
-                    <span className="step-number">2</span>
                     <div className="step-content">
                       <strong>Open Docker Desktop</strong>
                       <p>Launch the Docker Desktop application</p>
                     </div>
                   </div>
                   <div className="step">
-                    <span className="step-number">3</span>
                     <div className="step-content">
                       <strong>Navigate to Extensions</strong>
                       <p>Click on the Extensions tab in the left sidebar</p>
                     </div>
                   </div>
                   <div className="step">
-                    <span className="step-number">4</span>
                     <div className="step-content">
                       <strong>Search & Install</strong>
                       <p>Search for "Docketeer" and click Install</p>
@@ -369,7 +373,7 @@ export const Dockerteer = () => {
       </section>
 
       {/* Visual Features */}
-      <section className="dockerteer-visuals">
+      <section className="docketeer-visuals">
         <div className="container">
           <h2>Powerful Visual Interface</h2>
           <div className="visuals-grid">
@@ -377,16 +381,16 @@ export const Dockerteer = () => {
               <h3>Container Management</h3>
               <div className="visual-placeholder">
                 <svg width="100%" height="200" viewBox="0 0 400 200" fill="none">
-                  <rect x="10" y="10" width="380" height="180" rx="8" fill="var(--dockerteer-bg-tertiary)"/>
-                  <rect x="30" y="30" width="340" height="40" rx="4" fill="var(--dockerteer-primary)" opacity="0.2"/>
-                  <rect x="30" y="80" width="340" height="40" rx="4" fill="var(--dockerteer-accent)" opacity="0.2"/>
-                  <rect x="30" y="130" width="340" height="40" rx="4" fill="var(--dockerteer-success)" opacity="0.2"/>
-                  <circle cx="50" cy="50" r="8" fill="var(--dockerteer-success)"/>
-                  <circle cx="50" cy="100" r="8" fill="var(--dockerteer-warning)"/>
-                  <circle cx="50" cy="150" r="8" fill="var(--dockerteer-danger)"/>
-                  <text x="70" y="55" fill="var(--dockerteer-text-primary)" fontSize="14">nginx-container</text>
-                  <text x="70" y="105" fill="var(--dockerteer-text-primary)" fontSize="14">postgres-db</text>
-                  <text x="70" y="155" fill="var(--dockerteer-text-primary)" fontSize="14">redis-cache</text>
+                  <rect x="10" y="10" width="380" height="180" rx="8" fill="var(--docketeer-bg-tertiary)"/>
+                  <rect x="30" y="30" width="340" height="40" rx="4" fill="var(--docketeer-primary)" opacity="0.2"/>
+                  <rect x="30" y="80" width="340" height="40" rx="4" fill="var(--docketeer-accent)" opacity="0.2"/>
+                  <rect x="30" y="130" width="340" height="40" rx="4" fill="var(--docketeer-success)" opacity="0.2"/>
+                  <circle cx="50" cy="50" r="8" fill="var(--docketeer-success)"/>
+                  <circle cx="50" cy="100" r="8" fill="var(--docketeer-warning)"/>
+                  <circle cx="50" cy="150" r="8" fill="var(--docketeer-danger)"/>
+                  <text x="70" y="55" fill="var(--docketeer-text-primary)" fontSize="14">nginx-container</text>
+                  <text x="70" y="105" fill="var(--docketeer-text-primary)" fontSize="14">postgres-db</text>
+                  <text x="70" y="155" fill="var(--docketeer-text-primary)" fontSize="14">redis-cache</text>
                 </svg>
               </div>
               <p>Manage all your containers from a single dashboard with start, stop, and delete controls.</p>
@@ -396,20 +400,20 @@ export const Dockerteer = () => {
               <h3>Metrics Dashboard</h3>
               <div className="visual-placeholder">
                 <svg width="100%" height="200" viewBox="0 0 400 200" fill="none">
-                  <rect x="10" y="10" width="380" height="180" rx="8" fill="var(--dockerteer-bg-tertiary)"/>
+                  <rect x="10" y="10" width="380" height="180" rx="8" fill="var(--docketeer-bg-tertiary)"/>
                   <polyline 
                     points="30,150 80,120 130,140 180,100 230,110 280,80 330,90 370,70" 
-                    stroke="var(--dockerteer-primary)" 
+                    stroke="var(--docketeer-primary)" 
                     strokeWidth="2" 
                     fill="none"
                   />
                   <polyline 
                     points="30,160 80,140 130,150 180,130 230,140 280,120 330,130 370,110" 
-                    stroke="var(--dockerteer-accent)" 
+                    stroke="var(--docketeer-accent)" 
                     strokeWidth="2" 
                     fill="none"
                   />
-                  <text x="30" y="30" fill="var(--dockerteer-text-primary)" fontSize="14">CPU & Memory Usage</text>
+                  <text x="30" y="30" fill="var(--docketeer-text-primary)" fontSize="14">CPU & Memory Usage</text>
                 </svg>
               </div>
               <p>Real-time visualization of container metrics including CPU, memory, network, and disk I/O.</p>
@@ -419,7 +423,7 @@ export const Dockerteer = () => {
       </section>
 
       {/* Footer */}
-      <footer className="dockerteer-footer-compact">
+      <footer className="docketeer-footer-compact">
         <div className="container">
           <div className="footer-content-split">
             <div className="footer-section footer-left">

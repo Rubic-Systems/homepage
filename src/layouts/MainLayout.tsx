@@ -66,6 +66,30 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
                     >
                       Jotwell
                     </button>
+                    <button 
+                      onClick={() => {
+                        const subdomain = window.location.hostname.includes('localhost') 
+                          ? 'http://tkyo.localhost:5173' 
+                          : 'https://tkyo.rubicsystems.com';
+                        window.location.href = subdomain;
+                      }}
+                      className='dropdown-item'
+                      aria-label='Visit TKYODrift'
+                    >
+                      TKYODrift
+                    </button>
+                    <button 
+                      onClick={() => {
+                        const subdomain = window.location.hostname.includes('localhost') 
+                          ? 'http://docketeer.localhost:5173' 
+                          : 'https://docketeer.rubicsystems.com';
+                        window.location.href = subdomain;
+                      }}
+                      className='dropdown-item'
+                      aria-label='Visit Docketeer'
+                    >
+                      Docketeer
+                    </button>
                   </div>
                 )}
               </div>

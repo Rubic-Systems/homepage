@@ -20,6 +20,9 @@ export const Tkyo = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     
+    // Add class to body for subdomain-specific styling
+    document.body.classList.add('tkyo-subdomain');
+    
     // Fetch GitHub repo data
     fetch('https://api.github.com/repos/open-source-labs/tkyo-drift')
       .then(res => res.json())
@@ -58,6 +61,11 @@ export const Tkyo = () => {
       .catch(() => {
         // Silently fail - will show "..." in UI
       });
+    
+    // Cleanup: remove class when component unmounts
+    return () => {
+      document.body.classList.remove('tkyo-subdomain');
+    };
   }, []);
 
   const handleGitHubClick = () => {

@@ -1,88 +1,96 @@
 /* Docketeer Page - Compact Professional Styles */
 :root {
   /* Light Mode Colors */
-  --dockerteer-primary: #0066CC;
-  --dockerteer-primary-dark: #0052A3;
-  --dockerteer-accent: #326CE5;
-  --dockerteer-success: #00C896;
-  --dockerteer-warning: #FFB800;
-  --dockerteer-danger: #FF4757;
+  --docketeer-primary: #0066CC;
+  --docketeer-primary-dark: #0052A3;
+  --docketeer-accent: #326CE5;
+  --docketeer-success: #00C896;
+  --docketeer-warning: #FFB800;
+  --docketeer-danger: #FF4757;
   
   /* Light Mode Backgrounds */
-  --dockerteer-bg-primary: #FFFFFF;
-  --dockerteer-bg-secondary: #F8F9FA;
-  --dockerteer-bg-tertiary: #F1F3F5;
+  --docketeer-bg-primary: #FFFFFF;
+  --docketeer-bg-secondary: #F8F9FA;
+  --docketeer-bg-tertiary: #F1F3F5;
   
   /* Light Mode Text */
-  --dockerteer-text-primary: #212529;
-  --dockerteer-text-secondary: #495057;
-  --dockerteer-text-tertiary: #6C757D;
-  --dockerteer-text-muted: #ADB5BD;
+  --docketeer-text-primary: #212529;
+  --docketeer-text-secondary: #495057;
+  --docketeer-text-tertiary: #6C757D;
+  --docketeer-text-muted: #ADB5BD;
   
   /* UI Elements */
-  --dockerteer-border: #DEE2E6;
-  --dockerteer-shadow: rgba(0, 0, 0, 0.08);
-  --dockerteer-shadow-hover: rgba(0, 0, 0, 0.12);
+  --docketeer-border: #DEE2E6;
+  --docketeer-shadow: rgba(0, 0, 0, 0.08);
+  --docketeer-shadow-hover: rgba(0, 0, 0, 0.12);
 }
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --dockerteer-primary: #3385FF;
-  --dockerteer-primary-dark: #0066CC;
-  --dockerteer-accent: #5891F5;
-  --dockerteer-success: #00E5A0;
-  --dockerteer-warning: #FFC947;
-  --dockerteer-danger: #FF6B7A;
+  --docketeer-primary: #3385FF;
+  --docketeer-primary-dark: #0066CC;
+  --docketeer-accent: #5891F5;
+  --docketeer-success: #00E5A0;
+  --docketeer-warning: #FFC947;
+  --docketeer-danger: #FF6B7A;
   
-  --dockerteer-bg-primary: #0F1419;
-  --dockerteer-bg-secondary: #1A1F2E;
-  --dockerteer-bg-tertiary: #252D3D;
+  --docketeer-bg-primary: #0F1419;
+  --docketeer-bg-secondary: #1A1F2E;
+  --docketeer-bg-tertiary: #252D3D;
   
-  --dockerteer-text-primary: #F7FAFC;
-  --dockerteer-text-secondary: #CBD5E0;
-  --dockerteer-text-tertiary: #A0AEC0;
-  --dockerteer-text-muted: #718096;
+  --docketeer-text-primary: #F7FAFC;
+  --docketeer-text-secondary: #CBD5E0;
+  --docketeer-text-tertiary: #A0AEC0;
+  --docketeer-text-muted: #718096;
   
-  --dockerteer-border: #2D3748;
-  --dockerteer-shadow: rgba(0, 0, 0, 0.3);
-  --dockerteer-shadow-hover: rgba(0, 0, 0, 0.5);
+  --docketeer-border: #2D3748;
+  --docketeer-shadow: rgba(0, 0, 0, 0.3);
+  --docketeer-shadow-hover: rgba(0, 0, 0, 0.5);
 }
 
-/* Reset body styles when on Dockerteer subdomain */
-body:has(.dockerteer-page) {
+/* Force full viewport coverage when on Docketeer subdomain */
+html, body {
   margin: 0;
   padding: 0;
-  background-color: var(--dockerteer-bg-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-  color: var(--dockerteer-text-primary);
+}
+
+body.docketeer-subdomain {
+  background: var(--docketeer-bg-primary) !important;
+  color: var(--docketeer-text-primary);
+  min-width: 100vw;
   min-height: 100vh;
+}
+
+#root {
+  min-width: 100vw;
+}
+
+/* Override global.css #root centering for Docketeer subdomain */
+body.docketeer-subdomain #root {
+  align-items: stretch !important;
 }
 
 /* Base */
-.dockerteer-page {
+.docketeer-page {
+  width: 100%;
   min-height: 100vh;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
 
-.dockerteer-page .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+/* Use global.css container styles */
 
 /* Theme Toggle */
-.dockerteer-page .theme-toggle {
+.docketeer-page .theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
   z-index: 100;
-  background: var(--dockerteer-bg-primary);
-  border: 1px solid var(--dockerteer-border);
+  background: var(--docketeer-bg-primary);
+  border: 1px solid var(--docketeer-border);
   border-radius: 8px;
   width: 40px;
   height: 40px;
@@ -91,22 +99,19 @@ body:has(.dockerteer-page) {
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: var(--dockerteer-text-primary);
-  box-shadow: 0 2px 4px var(--dockerteer-shadow);
+  color: var(--docketeer-text-primary);
+  box-shadow: 0 2px 4px var(--docketeer-shadow);
 }
 
-.dockerteer-page .theme-toggle:hover {
+.docketeer-page .theme-toggle:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px var(--dockerteer-shadow-hover);
+  box-shadow: 0 4px 8px var(--docketeer-shadow-hover);
 }
 
 /* Compact Hero */
-.dockerteer-hero-compact {
+.docketeer-hero-compact {
   padding: 3rem 0;
-  background: linear-gradient(to bottom, var(--dockerteer-bg-secondary), var(--dockerteer-bg-primary));
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  background: linear-gradient(to bottom, var(--docketeer-bg-secondary), var(--docketeer-bg-primary));
 }
 
 .hero-grid {
@@ -120,26 +125,26 @@ body:has(.dockerteer-page) {
   max-width: 700px;
 }
 
-.dockerteer-title {
+.docketeer-title {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
   margin: 0 0 0.5rem;
-  background: linear-gradient(135deg, var(--dockerteer-primary) 0%, var(--dockerteer-accent) 100%);
+  background: linear-gradient(135deg, var(--docketeer-primary) 0%, var(--docketeer-accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.dockerteer-subtitle {
+.docketeer-subtitle {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   margin: 0 0 1rem;
   font-weight: 500;
 }
 
-.dockerteer-description {
+.docketeer-description {
   font-size: 1.125rem;
-  color: var(--dockerteer-text-tertiary);
+  color: var(--docketeer-text-tertiary);
   margin: 0 0 1.5rem;
   line-height: 1.7;
 }
@@ -166,25 +171,25 @@ body:has(.dockerteer-page) {
 }
 
 .btn-primary {
-  background: var(--dockerteer-primary);
+  background: var(--docketeer-primary);
   color: white;
 }
 
 .btn-primary:hover {
-  background: var(--dockerteer-primary-dark);
+  background: var(--docketeer-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--dockerteer-text-primary);
-  border: 2px solid var(--dockerteer-border);
+  color: var(--docketeer-text-primary);
+  border: 2px solid var(--docketeer-border);
 }
 
 .btn-secondary:hover {
-  border-color: var(--dockerteer-primary);
-  color: var(--dockerteer-primary);
+  border-color: var(--docketeer-primary);
+  color: var(--docketeer-primary);
   transform: translateY(-2px);
 }
 
@@ -194,9 +199,9 @@ body:has(.dockerteer-page) {
   flex-direction: column;
   gap: 1rem;
   padding: 1.5rem;
-  background: var(--dockerteer-bg-tertiary);
+  background: var(--docketeer-bg-tertiary);
   border-radius: 12px;
-  border: 1px solid var(--dockerteer-border);
+  border: 1px solid var(--docketeer-border);
 }
 
 .stat-item {
@@ -207,7 +212,7 @@ body:has(.dockerteer-page) {
 .stat-label {
   display: block;
   font-size: 0.875rem;
-  color: var(--dockerteer-text-muted);
+  color: var(--docketeer-text-muted);
   margin-bottom: 0.25rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -217,23 +222,20 @@ body:has(.dockerteer-page) {
   display: block;
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 /* Features Section */
-.dockerteer-features-compact {
+.docketeer-features-compact {
   padding: 4rem 0;
-  background: var(--dockerteer-bg-secondary);
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  background: var(--docketeer-bg-secondary);
 }
 
-.dockerteer-features-compact h2 {
+.docketeer-features-compact h2 {
   text-align: center;
   font-size: 2rem;
   margin: 0 0 3rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 /* Workflow */
@@ -243,9 +245,9 @@ body:has(.dockerteer-page) {
   gap: 2rem;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: var(--dockerteer-bg-secondary);
+  background: var(--docketeer-bg-secondary);
   border-radius: 12px;
-  border: 1px solid var(--dockerteer-border);
+  border: 1px solid var(--docketeer-border);
 }
 
 .workflow-item {
@@ -259,7 +261,7 @@ body:has(.dockerteer-page) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--dockerteer-primary), var(--dockerteer-accent));
+  background: linear-gradient(135deg, var(--docketeer-primary), var(--docketeer-accent));
   border-radius: 12px;
   color: white;
 }
@@ -267,11 +269,11 @@ body:has(.dockerteer-page) {
 .workflow-item h3 {
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .workflow-item p {
-  color: var(--dockerteer-text-tertiary);
+  color: var(--docketeer-text-tertiary);
   margin: 0;
 }
 
@@ -286,16 +288,16 @@ body:has(.dockerteer-page) {
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
-  background: var(--dockerteer-bg-secondary);
+  background: var(--docketeer-bg-secondary);
   border-radius: 8px;
-  border: 1px solid var(--dockerteer-border);
+  border: 1px solid var(--docketeer-border);
   transition: all 0.2s ease;
 }
 
 .feature-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--dockerteer-shadow);
-  border-color: var(--dockerteer-primary);
+  box-shadow: 0 4px 12px var(--docketeer-shadow);
+  border-color: var(--docketeer-primary);
 }
 
 .feature-icon-small {
@@ -305,38 +307,35 @@ body:has(.dockerteer-page) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dockerteer-bg-tertiary);
+  background: var(--docketeer-bg-tertiary);
   border-radius: 8px;
-  color: var(--dockerteer-primary);
+  color: var(--docketeer-primary);
 }
 
 .feature-content h3 {
   font-size: 1.125rem;
   margin: 0 0 0.5rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .feature-content p {
   margin: 0;
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 /* Installation Guide Section */
-.dockerteer-quickstart {
+.docketeer-quickstart {
   padding: 4rem 0;
-  background: var(--dockerteer-bg-primary);
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  background: var(--docketeer-bg-primary);
 }
 
-.dockerteer-quickstart h2 {
+.docketeer-quickstart h2 {
   text-align: center;
   font-size: 2rem;
   margin: 0 0 3rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .quickstart-grid {
@@ -350,23 +349,26 @@ body:has(.dockerteer-page) {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
+  justify-self: stretch;
 }
 
 .install-card {
-  background: var(--dockerteer-bg-secondary);
-  border: 1px solid var(--dockerteer-border);
+  background: var(--docketeer-bg-secondary);
+  border: 1px solid var(--docketeer-border);
   border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.2s ease;
+  width: 100%;
 }
 
 .install-card.primary {
-  background: var(--dockerteer-bg-secondary);
-  border: 2px solid var(--dockerteer-primary);
+  background: var(--docketeer-bg-secondary);
+  border: 2px solid var(--docketeer-primary);
 }
 
 .install-card:hover {
-  box-shadow: 0 4px 12px var(--dockerteer-shadow);
+  box-shadow: 0 4px 12px var(--docketeer-shadow);
 }
 
 .install-header {
@@ -379,15 +381,15 @@ body:has(.dockerteer-page) {
 .install-header h3,
 .install-header h4 {
   margin: 0;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .install-header svg {
-  color: var(--dockerteer-primary);
+  color: var(--docketeer-primary);
 }
 
 .badge {
-  background: var(--dockerteer-primary);
+  background: var(--docketeer-primary);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -401,21 +403,23 @@ body:has(.dockerteer-page) {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  align-items: stretch;
 }
 
 .step {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
+  display: block;
+  position: relative;
 }
 
 .step-number {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: var(--dockerteer-primary);
+  background: var(--docketeer-primary);
   color: white;
   border-radius: 50%;
   font-weight: 600;
@@ -423,24 +427,24 @@ body:has(.dockerteer-page) {
 }
 
 .step-content {
-  flex: 1;
+  width: 100%;
 }
 
 .step-content strong {
   display: block;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
   margin-bottom: 0.25rem;
 }
 
 .step-content p {
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   margin: 0 0 0.5rem;
   font-size: 0.95rem;
 }
 
 .link-button {
   display: inline-block;
-  color: var(--dockerteer-primary);
+  color: var(--docketeer-primary);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -459,14 +463,14 @@ body:has(.dockerteer-page) {
 }
 
 .install-description {
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   font-size: 0.95rem;
   margin: 0 0 1rem;
 }
 
 .command-box {
-  background: var(--dockerteer-bg-tertiary);
-  border: 1px solid var(--dockerteer-border);
+  background: var(--docketeer-bg-tertiary);
+  border: 1px solid var(--docketeer-border);
   border-radius: 6px;
   padding: 0.75rem 1rem;
   margin: 0 0 1rem;
@@ -474,7 +478,7 @@ body:has(.dockerteer-page) {
 
 .command-box code {
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
   font-size: 0.9rem;
 }
 
@@ -483,7 +487,7 @@ body:has(.dockerteer-page) {
 }
 
 .access-points p {
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
   margin: 0 0 0.5rem;
   font-weight: 500;
 }
@@ -495,20 +499,20 @@ body:has(.dockerteer-page) {
 }
 
 .access-points li {
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   padding: 0.25rem 0;
 }
 
 .access-points code {
-  background: var(--dockerteer-bg-tertiary);
+  background: var(--docketeer-bg-tertiary);
   padding: 0.125rem 0.375rem;
   border-radius: 3px;
   font-size: 0.85rem;
-  color: var(--dockerteer-primary);
+  color: var(--docketeer-primary);
 }
 
 .install-note {
-  color: var(--dockerteer-text-tertiary);
+  color: var(--docketeer-text-tertiary);
   font-size: 0.85rem;
   font-style: italic;
   margin: 0;
@@ -518,7 +522,7 @@ body:has(.dockerteer-page) {
 .info-section h3 {
   font-size: 1.25rem;
   margin: 0 0 1rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .capabilities-list,
@@ -532,8 +536,8 @@ body:has(.dockerteer-page) {
 .dependencies-list li {
   position: relative;
   padding: 0.5rem 0 0.5rem 2rem;
-  color: var(--dockerteer-text-secondary);
-  border-bottom: 1px solid var(--dockerteer-border);
+  color: var(--docketeer-text-secondary);
+  border-bottom: 1px solid var(--docketeer-border);
 }
 
 .capabilities-list li:before,
@@ -542,25 +546,22 @@ body:has(.dockerteer-page) {
   position: absolute;
   left: 0;
   top: 0.5rem;
-  color: var(--dockerteer-success);
+  color: var(--docketeer-success);
   font-weight: bold;
   flex-shrink: 0;
 }
 
 /* Visual Features Section */
-.dockerteer-visuals {
+.docketeer-visuals {
   padding: 4rem 0;
-  background: var(--dockerteer-bg-secondary);
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  background: var(--docketeer-bg-secondary);
 }
 
-.dockerteer-visuals h2 {
+.docketeer-visuals h2 {
   text-align: center;
   font-size: 2rem;
   margin: 0 0 3rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .visuals-grid {
@@ -570,39 +571,36 @@ body:has(.dockerteer-page) {
 }
 
 .visual-item {
-  background: var(--dockerteer-bg-primary);
+  background: var(--docketeer-bg-primary);
   padding: 2rem;
   border-radius: 12px;
-  border: 1px solid var(--dockerteer-border);
+  border: 1px solid var(--docketeer-border);
 }
 
 .visual-item h3 {
   font-size: 1.25rem;
   margin: 0 0 1rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .visual-placeholder {
   margin-bottom: 1rem;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--dockerteer-bg-tertiary);
-  border: 1px solid var(--dockerteer-border);
+  background: var(--docketeer-bg-tertiary);
+  border: 1px solid var(--docketeer-border);
 }
 
 .visual-item p {
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   margin: 0;
 }
 
 /* Footer */
-.dockerteer-footer-compact {
+.docketeer-footer-compact {
   padding: 2rem 0;
-  background: var(--dockerteer-bg-tertiary);
-  border-top: 1px solid var(--dockerteer-border);
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  background: var(--docketeer-bg-tertiary);
+  border-top: 1px solid var(--docketeer-border);
 }
 
 .footer-content-split {
@@ -623,7 +621,7 @@ body:has(.dockerteer-page) {
 .footer-section h4 {
   font-size: 1.125rem;
   margin: 0 0 0.75rem;
-  color: var(--dockerteer-text-primary);
+  color: var(--docketeer-text-primary);
 }
 
 .footer-links {
@@ -633,22 +631,22 @@ body:has(.dockerteer-page) {
 }
 
 .footer-links a {
-  color: var(--dockerteer-text-secondary);
+  color: var(--docketeer-text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: var(--dockerteer-primary);
+  color: var(--docketeer-primary);
 }
 
 .footer-section p {
-  color: var(--dockerteer-text-tertiary);
+  color: var(--docketeer-text-tertiary);
   margin: 0 0 0.5rem;
 }
 
 .rubic-link {
-  color: var(--dockerteer-primary);
+  color: var(--docketeer-primary);
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s ease;
@@ -710,13 +708,13 @@ body:has(.dockerteer-page) {
     text-align: left;
   }
   
-  .dockerteer-hero-compact {
+  .docketeer-hero-compact {
     padding: 2rem 0;
   }
   
-  .dockerteer-features-compact,
-  .dockerteer-quickstart,
-  .dockerteer-visuals {
+  .docketeer-features-compact,
+  .docketeer-quickstart,
+  .docketeer-visuals {
     padding: 3rem 0;
   }
 }

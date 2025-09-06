@@ -78,6 +78,25 @@
   --anim-slow: 0.5s;
 }
 
+/* Force full viewport coverage when on Jotwell subdomain */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.jotwell-subdomain {
+  background: var(--jotwell-bg-primary) !important;
+  color: var(--jotwell-text-primary);
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+/* Override global.css #root centering for Jotwell subdomain */
+body.jotwell-subdomain #root {
+  align-items: stretch !important;
+  min-width: 100vw;
+}
+
 /* Dark Mode Variables */
 [data-theme="dark"] {
   /* Dark Mode - Primary Colors */
@@ -127,6 +146,7 @@
 }
 
 .jotwell-page {
+  width: 100%;
   min-height: 100vh;
   background: var(--jotwell-bg-primary);
   display: flex;
