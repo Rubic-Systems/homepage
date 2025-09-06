@@ -1,0 +1,722 @@
+/* Docketeer Page - Compact Professional Styles */
+:root {
+  /* Light Mode Colors */
+  --dockerteer-primary: #0066CC;
+  --dockerteer-primary-dark: #0052A3;
+  --dockerteer-accent: #326CE5;
+  --dockerteer-success: #00C896;
+  --dockerteer-warning: #FFB800;
+  --dockerteer-danger: #FF4757;
+  
+  /* Light Mode Backgrounds */
+  --dockerteer-bg-primary: #FFFFFF;
+  --dockerteer-bg-secondary: #F8F9FA;
+  --dockerteer-bg-tertiary: #F1F3F5;
+  
+  /* Light Mode Text */
+  --dockerteer-text-primary: #212529;
+  --dockerteer-text-secondary: #495057;
+  --dockerteer-text-tertiary: #6C757D;
+  --dockerteer-text-muted: #ADB5BD;
+  
+  /* UI Elements */
+  --dockerteer-border: #DEE2E6;
+  --dockerteer-shadow: rgba(0, 0, 0, 0.08);
+  --dockerteer-shadow-hover: rgba(0, 0, 0, 0.12);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --dockerteer-primary: #3385FF;
+  --dockerteer-primary-dark: #0066CC;
+  --dockerteer-accent: #5891F5;
+  --dockerteer-success: #00E5A0;
+  --dockerteer-warning: #FFC947;
+  --dockerteer-danger: #FF6B7A;
+  
+  --dockerteer-bg-primary: #0F1419;
+  --dockerteer-bg-secondary: #1A1F2E;
+  --dockerteer-bg-tertiary: #252D3D;
+  
+  --dockerteer-text-primary: #F7FAFC;
+  --dockerteer-text-secondary: #CBD5E0;
+  --dockerteer-text-tertiary: #A0AEC0;
+  --dockerteer-text-muted: #718096;
+  
+  --dockerteer-border: #2D3748;
+  --dockerteer-shadow: rgba(0, 0, 0, 0.3);
+  --dockerteer-shadow-hover: rgba(0, 0, 0, 0.5);
+}
+
+/* Reset body styles when on Dockerteer subdomain */
+body:has(.dockerteer-page) {
+  margin: 0;
+  padding: 0;
+  background-color: var(--dockerteer-bg-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  color: var(--dockerteer-text-primary);
+  min-height: 100vh;
+}
+
+/* Base */
+.dockerteer-page {
+  min-height: 100vh;
+  color: var(--dockerteer-text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+.dockerteer-page .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Theme Toggle */
+.dockerteer-page .theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background: var(--dockerteer-bg-primary);
+  border: 1px solid var(--dockerteer-border);
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--dockerteer-text-primary);
+  box-shadow: 0 2px 4px var(--dockerteer-shadow);
+}
+
+.dockerteer-page .theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px var(--dockerteer-shadow-hover);
+}
+
+/* Compact Hero */
+.dockerteer-hero-compact {
+  padding: 3rem 0;
+  background: linear-gradient(to bottom, var(--dockerteer-bg-secondary), var(--dockerteer-bg-primary));
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.dockerteer-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, var(--dockerteer-primary) 0%, var(--dockerteer-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dockerteer-subtitle {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--dockerteer-text-secondary);
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+.dockerteer-description {
+  font-size: 1.125rem;
+  color: var(--dockerteer-text-tertiary);
+  margin: 0 0 1.5rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--dockerteer-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dockerteer-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--dockerteer-text-primary);
+  border: 2px solid var(--dockerteer-border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--dockerteer-primary);
+  color: var(--dockerteer-primary);
+  transform: translateY(-2px);
+}
+
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--dockerteer-bg-tertiary);
+  border-radius: 12px;
+  border: 1px solid var(--dockerteer-border);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--dockerteer-text-muted);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--dockerteer-text-primary);
+}
+
+/* Features Section */
+.dockerteer-features-compact {
+  padding: 4rem 0;
+  background: var(--dockerteer-bg-secondary);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dockerteer-features-compact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 3rem;
+  color: var(--dockerteer-text-primary);
+}
+
+/* Workflow */
+.workflow-simple {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--dockerteer-bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--dockerteer-border);
+}
+
+.workflow-item {
+  text-align: center;
+}
+
+.workflow-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dockerteer-primary), var(--dockerteer-accent));
+  border-radius: 12px;
+  color: white;
+}
+
+.workflow-item h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.workflow-item p {
+  color: var(--dockerteer-text-tertiary);
+  margin: 0;
+}
+
+/* Features Grid */
+.features-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--dockerteer-bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--dockerteer-border);
+  transition: all 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--dockerteer-shadow);
+  border-color: var(--dockerteer-primary);
+}
+
+.feature-icon-small {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dockerteer-bg-tertiary);
+  border-radius: 8px;
+  color: var(--dockerteer-primary);
+}
+
+.feature-content h3 {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.feature-content p {
+  margin: 0;
+  color: var(--dockerteer-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Installation Guide Section */
+.dockerteer-quickstart {
+  padding: 4rem 0;
+  background: var(--dockerteer-bg-primary);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dockerteer-quickstart h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 3rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.quickstart-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+
+/* Installation Methods */
+.installation-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.install-card {
+  background: var(--dockerteer-bg-secondary);
+  border: 1px solid var(--dockerteer-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.install-card.primary {
+  background: var(--dockerteer-bg-secondary);
+  border: 2px solid var(--dockerteer-primary);
+}
+
+.install-card:hover {
+  box-shadow: 0 4px 12px var(--dockerteer-shadow);
+}
+
+.install-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.install-header h3,
+.install-header h4 {
+  margin: 0;
+  color: var(--dockerteer-text-primary);
+}
+
+.install-header svg {
+  color: var(--dockerteer-primary);
+}
+
+.badge {
+  background: var(--dockerteer-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+/* Installation Steps */
+.install-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--dockerteer-primary);
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content strong {
+  display: block;
+  color: var(--dockerteer-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.step-content p {
+  color: var(--dockerteer-text-secondary);
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.link-button {
+  display: inline-block;
+  color: var(--dockerteer-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.link-button:hover {
+  opacity: 0.8;
+}
+
+/* Alternative Installations */
+.install-alternatives {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.install-description {
+  color: var(--dockerteer-text-secondary);
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+}
+
+.command-box {
+  background: var(--dockerteer-bg-tertiary);
+  border: 1px solid var(--dockerteer-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.command-box code {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  color: var(--dockerteer-text-primary);
+  font-size: 0.9rem;
+}
+
+.access-points {
+  font-size: 0.9rem;
+}
+
+.access-points p {
+  color: var(--dockerteer-text-primary);
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+}
+
+.access-points ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.access-points li {
+  color: var(--dockerteer-text-secondary);
+  padding: 0.25rem 0;
+}
+
+.access-points code {
+  background: var(--dockerteer-bg-tertiary);
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  color: var(--dockerteer-primary);
+}
+
+.install-note {
+  color: var(--dockerteer-text-tertiary);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Info Section */
+.info-section h3 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.capabilities-list,
+.dependencies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.capabilities-list li,
+.dependencies-list li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 2rem;
+  color: var(--dockerteer-text-secondary);
+  border-bottom: 1px solid var(--dockerteer-border);
+}
+
+.capabilities-list li:before,
+.dependencies-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: var(--dockerteer-success);
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Visual Features Section */
+.dockerteer-visuals {
+  padding: 4rem 0;
+  background: var(--dockerteer-bg-secondary);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dockerteer-visuals h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 0 3rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.visuals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.visual-item {
+  background: var(--dockerteer-bg-primary);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--dockerteer-border);
+}
+
+.visual-item h3 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.visual-placeholder {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--dockerteer-bg-tertiary);
+  border: 1px solid var(--dockerteer-border);
+}
+
+.visual-item p {
+  color: var(--dockerteer-text-secondary);
+  margin: 0;
+}
+
+/* Footer */
+.dockerteer-footer-compact {
+  padding: 2rem 0;
+  background: var(--dockerteer-bg-tertiary);
+  border-top: 1px solid var(--dockerteer-border);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-section h4 {
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+  color: var(--dockerteer-text-primary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--dockerteer-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--dockerteer-primary);
+}
+
+.footer-section p {
+  color: var(--dockerteer-text-tertiary);
+  margin: 0 0 0.5rem;
+}
+
+.rubic-link {
+  color: var(--dockerteer-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.rubic-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero-stats {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .workflow-simple {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid-compact {
+    grid-template-columns: 1fr;
+  }
+  
+  .quickstart-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .install-alternatives {
+    grid-template-columns: 1fr;
+  }
+  
+  .install-steps {
+    gap: 1rem;
+  }
+  
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+  
+  .visuals-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content-split {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .footer-left,
+  .footer-right {
+    text-align: left;
+  }
+  
+  .dockerteer-hero-compact {
+    padding: 2rem 0;
+  }
+  
+  .dockerteer-features-compact,
+  .dockerteer-quickstart,
+  .dockerteer-visuals {
+    padding: 3rem 0;
+  }
+}
