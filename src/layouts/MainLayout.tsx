@@ -90,6 +90,18 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
                     >
                       Docketeer
                     </button>
+                    <button 
+                      onClick={() => {
+                        const subdomain = window.location.hostname.includes('localhost') 
+                          ? 'http://kpidemo.localhost:5173' 
+                          : 'https://kpidemo.rubicsystems.com';
+                        window.location.href = subdomain;
+                      }}
+                      className='dropdown-item'
+                      aria-label='Visit KPI Demo'
+                    >
+                      KPI Demo
+                    </button>
                   </div>
                 )}
               </div>

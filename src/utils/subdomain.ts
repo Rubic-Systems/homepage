@@ -49,6 +49,23 @@ export const isDocketeerSubdomain = (): boolean => {
   return false;
 };
 
+export const isKpiDemoSubdomain = (): boolean => {
+  const hostname = window.location.hostname;
+  
+  // Check if hostname starts with 'kpidemo.'
+  if (hostname.startsWith('kpidemo.')) {
+    return true;
+  }
+  
+  // For local development testing with query parameter
+  if (process.env.NODE_ENV === 'development') {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('subdomain') === 'kpidemo';
+  }
+  
+  return false;
+};
+
 export const getSubdomain = (): string | null => {
   const hostname = window.location.hostname;
   

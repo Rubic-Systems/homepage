@@ -4,9 +4,10 @@ import { Home } from './pages/Home'
 import { Jotwell } from './pages/Jotwell'
 import { Tkyo } from './pages/Tkyo'
 import { Docketeer } from './pages/Docketeer'
+import { KpiDemo } from './pages/KpiDemo'
 import ErrorBoundary from './components/ErrorBoundary'
 import { ThemeProvider } from './contexts/ThemeContext'
-import { isJotwellSubdomain, isTkyoSubdomain, isDocketeerSubdomain } from './utils/subdomain'
+import { isJotwellSubdomain, isTkyoSubdomain, isDocketeerSubdomain, isKpiDemoSubdomain } from './utils/subdomain'
 import './styles/global.css'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const isJotwell = isJotwellSubdomain();
   const isTkyo = isTkyoSubdomain();
   const isDocketeer = isDocketeerSubdomain();
+  const isKpiDemo = isKpiDemoSubdomain();
   
   // If on Jotwell subdomain, show Jotwell page directly without main layout
   if (isJotwell) {
@@ -48,6 +50,15 @@ function App() {
     );
   }
   
+  // If on KPI Demo subdomain, show KPI Demo iframe directly
+  if (isKpiDemo) {
+    return (
+      <ErrorBoundary>
+        <KpiDemo />
+      </ErrorBoundary>
+    );
+  }
+  
   // Regular routing for main site
   return (
     <ErrorBoundary>
@@ -59,6 +70,7 @@ function App() {
               <Route path="/jotwell" element={<Jotwell />} />
               <Route path="/tkyo" element={<Tkyo />} />
               <Route path="/docketeer" element={<Docketeer />} />
+              <Route path="/kpidemo" element={<KpiDemo />} />
             </Routes>
           </MainLayout>
         </Router>
