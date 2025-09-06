@@ -378,46 +378,106 @@ export const Docketeer = () => {
           <h2>Powerful Visual Interface</h2>
           <div className="visuals-grid">
             <div className="visual-item">
-              <h3>Container Management</h3>
-              <div className="visual-placeholder">
-                <svg width="100%" height="200" viewBox="0 0 400 200" fill="none">
-                  <rect x="10" y="10" width="380" height="180" rx="8" fill="var(--docketeer-bg-tertiary)"/>
-                  <rect x="30" y="30" width="340" height="40" rx="4" fill="var(--docketeer-primary)" opacity="0.2"/>
-                  <rect x="30" y="80" width="340" height="40" rx="4" fill="var(--docketeer-accent)" opacity="0.2"/>
-                  <rect x="30" y="130" width="340" height="40" rx="4" fill="var(--docketeer-success)" opacity="0.2"/>
-                  <circle cx="50" cy="50" r="8" fill="var(--docketeer-success)"/>
-                  <circle cx="50" cy="100" r="8" fill="var(--docketeer-warning)"/>
-                  <circle cx="50" cy="150" r="8" fill="var(--docketeer-danger)"/>
-                  <text x="70" y="55" fill="var(--docketeer-text-primary)" fontSize="14">nginx-container</text>
-                  <text x="70" y="105" fill="var(--docketeer-text-primary)" fontSize="14">postgres-db</text>
-                  <text x="70" y="155" fill="var(--docketeer-text-primary)" fontSize="14">redis-cache</text>
-                </svg>
+              <h3>Navigation & Interface</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/Navigation_v20.gif"
+                  alt="Docketeer navigation interface demonstration"
+                  loading="lazy"
+                  className="visual-gif"
+                />
               </div>
-              <p>Manage all your containers from a single dashboard with start, stop, and delete controls.</p>
+              <p>Intuitive navigation through all Docker resources with a clean, modern interface.</p>
             </div>
             
             <div className="visual-item">
-              <h3>Metrics Dashboard</h3>
-              <div className="visual-placeholder">
-                <svg width="100%" height="200" viewBox="0 0 400 200" fill="none">
-                  <rect x="10" y="10" width="380" height="180" rx="8" fill="var(--docketeer-bg-tertiary)"/>
-                  <polyline 
-                    points="30,150 80,120 130,140 180,100 230,110 280,80 330,90 370,70" 
-                    stroke="var(--docketeer-primary)" 
-                    strokeWidth="2" 
-                    fill="none"
-                  />
-                  <polyline 
-                    points="30,160 80,140 130,150 180,130 230,140 280,120 330,130 370,110" 
-                    stroke="var(--docketeer-accent)" 
-                    strokeWidth="2" 
-                    fill="none"
-                  />
-                  <text x="30" y="30" fill="var(--docketeer-text-primary)" fontSize="14">CPU & Memory Usage</text>
-                </svg>
+              <h3>Container Metrics</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/ContainersMetrics_v20.gif"
+                  alt="Real-time container metrics visualization"
+                  loading="lazy"
+                  className="visual-gif"
+                />
               </div>
-              <p>Real-time visualization of container metrics including CPU, memory, network, and disk I/O.</p>
+              <p>Monitor CPU, memory, network I/O, and disk usage with real-time performance graphs.</p>
             </div>
+            
+            <div className="visual-item">
+              <h3>Container Filtering</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/ContainersFilters_v20.gif"
+                  alt="Container filtering and search capabilities"
+                  loading="lazy"
+                  className="visual-gif"
+                />
+              </div>
+              <p>Advanced filtering and search to quickly find and manage specific containers.</p>
+            </div>
+            
+            <div className="visual-item">
+              <h3>Process Logs</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/ProcessLogs_v20.gif"
+                  alt="Container log processing and filtering"
+                  loading="lazy"
+                  className="visual-gif"
+                />
+              </div>
+              <p>Stream and filter container logs with powerful search and analysis tools.</p>
+            </div>
+            
+            <div className="visual-item">
+              <h3>Image Management</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/Images_v20.gif"
+                  alt="Docker image management interface"
+                  loading="lazy"
+                  className="visual-gif"
+                />
+              </div>
+              <p>Manage Docker images with vulnerability scanning and size optimization insights.</p>
+            </div>
+            
+            <div className="visual-item">
+              <h3>Kubernetes Monitoring</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/KubernetesClusterHealthMetrics_v20.gif"
+                  alt="Kubernetes cluster health monitoring"
+                  loading="lazy"
+                  className="visual-gif"
+                />
+              </div>
+              <p>Monitor Kubernetes cluster health with pod status and resource utilization metrics.</p>
+            </div>
+            
+            <div className="visual-item">
+              <h3>Snapshot Metrics</h3>
+              <div className="visual-content">
+                <img 
+                  src="https://raw.githubusercontent.com/open-source-labs/Docketeer-extension/master/assets/SnapshotMetrics_v20.gif"
+                  alt="Historical metrics snapshots and comparison"
+                  loading="lazy"
+                  className="visual-gif"
+                />
+              </div>
+              <p>Compare historical performance snapshots to track changes and identify trends.</p>
+            </div>
+          </div>
+          
+          {/* Get Started CTA */}
+          <div className="visuals-cta">
+            <h3>Ready to streamline your Docker workflow?</h3>
+            <button 
+              className="btn-cta-large"
+              onClick={() => window.open('https://docketeer.io/', '_blank')}
+            >
+              Get Started Here →
+            </button>
           </div>
         </div>
       </section>

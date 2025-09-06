@@ -114,14 +114,14 @@ body.docketeer-subdomain #root {
   background: linear-gradient(to bottom, var(--docketeer-bg-secondary), var(--docketeer-bg-primary));
 }
 
-.hero-grid {
+.docketeer-page .hero-grid {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 3rem;
   align-items: center;
 }
 
-.hero-content {
+.docketeer-page .hero-content {
   max-width: 700px;
 }
 
@@ -149,14 +149,14 @@ body.docketeer-subdomain #root {
   line-height: 1.7;
 }
 
-.hero-buttons {
+.docketeer-page .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.btn-primary,
-.btn-secondary {
+.docketeer-page .btn-primary,
+.docketeer-page .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -170,31 +170,31 @@ body.docketeer-subdomain #root {
   text-decoration: none;
 }
 
-.btn-primary {
+.docketeer-page .btn-primary {
   background: var(--docketeer-primary);
   color: white;
 }
 
-.btn-primary:hover {
+.docketeer-page .btn-primary:hover {
   background: var(--docketeer-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
 
-.btn-secondary {
+.docketeer-page .btn-secondary {
   background: transparent;
   color: var(--docketeer-text-primary);
   border: 2px solid var(--docketeer-border);
 }
 
-.btn-secondary:hover {
+.docketeer-page .btn-secondary:hover {
   border-color: var(--docketeer-primary);
   color: var(--docketeer-primary);
   transform: translateY(-2px);
 }
 
 /* Hero Stats */
-.hero-stats {
+.docketeer-page .hero-stats {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -204,12 +204,12 @@ body.docketeer-subdomain #root {
   border: 1px solid var(--docketeer-border);
 }
 
-.stat-item {
+.docketeer-page .stat-item {
   text-align: center;
   padding: 0.75rem;
 }
 
-.stat-label {
+.docketeer-page .stat-label {
   display: block;
   font-size: 0.875rem;
   color: var(--docketeer-text-muted);
@@ -218,7 +218,7 @@ body.docketeer-subdomain #root {
   letter-spacing: 0.5px;
 }
 
-.stat-value {
+.docketeer-page .stat-value {
   display: block;
   font-size: 1.25rem;
   font-weight: 700;
@@ -239,7 +239,7 @@ body.docketeer-subdomain #root {
 }
 
 /* Workflow */
-.workflow-simple {
+.docketeer-page .workflow-simple {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
@@ -250,11 +250,11 @@ body.docketeer-subdomain #root {
   border: 1px solid var(--docketeer-border);
 }
 
-.workflow-item {
+.docketeer-page .workflow-item {
   text-align: center;
 }
 
-.workflow-icon {
+.docketeer-page .workflow-icon {
   width: 64px;
   height: 64px;
   margin: 0 auto 1rem;
@@ -266,25 +266,25 @@ body.docketeer-subdomain #root {
   color: white;
 }
 
-.workflow-item h3 {
+.docketeer-page .workflow-item h3 {
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
   color: var(--docketeer-text-primary);
 }
 
-.workflow-item p {
+.docketeer-page .workflow-item p {
   color: var(--docketeer-text-tertiary);
   margin: 0;
 }
 
 /* Features Grid */
-.features-grid-compact {
+.docketeer-page .features-grid-compact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
 }
 
-.feature-item {
+.docketeer-page .feature-item {
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
@@ -294,13 +294,13 @@ body.docketeer-subdomain #root {
   transition: all 0.2s ease;
 }
 
-.feature-item:hover {
+.docketeer-page .feature-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--docketeer-shadow);
   border-color: var(--docketeer-primary);
 }
 
-.feature-icon-small {
+.docketeer-page .feature-icon-small {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
@@ -312,13 +312,13 @@ body.docketeer-subdomain #root {
   color: var(--docketeer-primary);
 }
 
-.feature-content h3 {
+.docketeer-page .feature-content h3 {
   font-size: 1.125rem;
   margin: 0 0 0.5rem;
   color: var(--docketeer-text-primary);
 }
 
-.feature-content p {
+.docketeer-page .feature-content p {
   margin: 0;
   color: var(--docketeer-text-secondary);
   font-size: 0.95rem;
@@ -338,14 +338,14 @@ body.docketeer-subdomain #root {
   color: var(--docketeer-text-primary);
 }
 
-.quickstart-grid {
+.docketeer-page .quickstart-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
 }
 
 /* Installation Methods */
-.installation-methods {
+.docketeer-page .installation-methods {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -353,7 +353,7 @@ body.docketeer-subdomain #root {
   justify-self: stretch;
 }
 
-.install-card {
+.docketeer-page .install-card {
   background: var(--docketeer-bg-secondary);
   border: 1px solid var(--docketeer-border);
   border-radius: 12px;
@@ -362,33 +362,33 @@ body.docketeer-subdomain #root {
   width: 100%;
 }
 
-.install-card.primary {
+.docketeer-page .install-card.primary {
   background: var(--docketeer-bg-secondary);
   border: 2px solid var(--docketeer-primary);
 }
 
-.install-card:hover {
+.docketeer-page .install-card:hover {
   box-shadow: 0 4px 12px var(--docketeer-shadow);
 }
 
-.install-header {
+.docketeer-page .install-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 
-.install-header h3,
-.install-header h4 {
+.docketeer-page .install-header h3,
+.docketeer-page .install-header h4 {
   margin: 0;
   color: var(--docketeer-text-primary);
 }
 
-.install-header svg {
+.docketeer-page .install-header svg {
   color: var(--docketeer-primary);
 }
 
-.badge {
+.docketeer-page .badge {
   background: var(--docketeer-primary);
   color: white;
   padding: 0.25rem 0.75rem;
@@ -399,7 +399,7 @@ body.docketeer-subdomain #root {
 }
 
 /* Installation Steps */
-.install-steps {
+.docketeer-page .install-steps {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -407,12 +407,12 @@ body.docketeer-subdomain #root {
   align-items: stretch;
 }
 
-.step {
+.docketeer-page .step {
   display: block;
   position: relative;
 }
 
-.step-number {
+.docketeer-page .step-number {
   position: relative;
   display: flex;
   align-items: center;
@@ -426,23 +426,23 @@ body.docketeer-subdomain #root {
   flex-shrink: 0;
 }
 
-.step-content {
+.docketeer-page .step-content {
   width: 100%;
 }
 
-.step-content strong {
+.docketeer-page .step-content strong {
   display: block;
   color: var(--docketeer-text-primary);
   margin-bottom: 0.25rem;
 }
 
-.step-content p {
+.docketeer-page .step-content p {
   color: var(--docketeer-text-secondary);
   margin: 0 0 0.5rem;
   font-size: 0.95rem;
 }
 
-.link-button {
+.docketeer-page .link-button {
   display: inline-block;
   color: var(--docketeer-primary);
   text-decoration: none;
@@ -451,24 +451,24 @@ body.docketeer-subdomain #root {
   transition: opacity 0.2s ease;
 }
 
-.link-button:hover {
+.docketeer-page .link-button:hover {
   opacity: 0.8;
 }
 
 /* Alternative Installations */
-.install-alternatives {
+.docketeer-page .install-alternatives {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
-.install-description {
+.docketeer-page .install-description {
   color: var(--docketeer-text-secondary);
   font-size: 0.95rem;
   margin: 0 0 1rem;
 }
 
-.command-box {
+.docketeer-page .command-box {
   background: var(--docketeer-bg-tertiary);
   border: 1px solid var(--docketeer-border);
   border-radius: 6px;
@@ -476,34 +476,34 @@ body.docketeer-subdomain #root {
   margin: 0 0 1rem;
 }
 
-.command-box code {
+.docketeer-page .command-box code {
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   color: var(--docketeer-text-primary);
   font-size: 0.9rem;
 }
 
-.access-points {
+.docketeer-page .access-points {
   font-size: 0.9rem;
 }
 
-.access-points p {
+.docketeer-page .access-points p {
   color: var(--docketeer-text-primary);
   margin: 0 0 0.5rem;
   font-weight: 500;
 }
 
-.access-points ul {
+.docketeer-page .access-points ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.access-points li {
+.docketeer-page .access-points li {
   color: var(--docketeer-text-secondary);
   padding: 0.25rem 0;
 }
 
-.access-points code {
+.docketeer-page .access-points code {
   background: var(--docketeer-bg-tertiary);
   padding: 0.125rem 0.375rem;
   border-radius: 3px;
@@ -511,7 +511,7 @@ body.docketeer-subdomain #root {
   color: var(--docketeer-primary);
 }
 
-.install-note {
+.docketeer-page .install-note {
   color: var(--docketeer-text-tertiary);
   font-size: 0.85rem;
   font-style: italic;
@@ -519,29 +519,33 @@ body.docketeer-subdomain #root {
 }
 
 /* Info Section */
-.info-section h3 {
+.docketeer-page .info-section h3 {
   font-size: 1.25rem;
   margin: 0 0 1rem;
   color: var(--docketeer-text-primary);
 }
 
-.capabilities-list,
-.dependencies-list {
+.docketeer-page .capabilities-list,
+.docketeer-page .dependencies-list {
   list-style: none;
   padding: 0;
   margin: 0 0 2rem;
 }
 
-.capabilities-list li,
-.dependencies-list li {
+.docketeer-page .dependencies-list:last-child {
+  margin-bottom: 0;
+}
+
+.docketeer-page .capabilities-list li,
+.docketeer-page .dependencies-list li {
   position: relative;
   padding: 0.5rem 0 0.5rem 2rem;
   color: var(--docketeer-text-secondary);
   border-bottom: 1px solid var(--docketeer-border);
 }
 
-.capabilities-list li:before,
-.dependencies-list li:before {
+.docketeer-page .capabilities-list li:before,
+.docketeer-page .dependencies-list li:before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -564,26 +568,50 @@ body.docketeer-subdomain #root {
   color: var(--docketeer-text-primary);
 }
 
-.visuals-grid {
+.docketeer-page .visuals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-.visual-item {
+.docketeer-page .visual-item {
   background: var(--docketeer-bg-primary);
   padding: 2rem;
   border-radius: 12px;
   border: 1px solid var(--docketeer-border);
 }
 
-.visual-item h3 {
-  font-size: 1.25rem;
-  margin: 0 0 1rem;
+.docketeer-page .visual-item h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
   color: var(--docketeer-text-primary);
 }
 
-.visual-placeholder {
+.docketeer-page .visual-content {
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--docketeer-bg-tertiary);
+  border: 1px solid var(--docketeer-border);
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.docketeer-page .visual-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.docketeer-page .visual-placeholder {
   margin-bottom: 1rem;
   border-radius: 8px;
   overflow: hidden;
@@ -591,9 +619,51 @@ body.docketeer-subdomain #root {
   border: 1px solid var(--docketeer-border);
 }
 
-.visual-item p {
+.docketeer-page .visual-item p {
   color: var(--docketeer-text-secondary);
   margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Visuals CTA Section */
+.docketeer-page .visuals-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, var(--docketeer-primary) 0%, var(--docketeer-accent) 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.docketeer-page .visuals-cta h3 {
+  color: white;
+  font-size: 1.75rem;
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+
+.docketeer-page .btn-cta-large {
+  background: white;
+  color: var(--docketeer-primary);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.docketeer-page .btn-cta-large:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: #f8f9fa;
+}
+
+.docketeer-page .btn-cta-large:active {
+  transform: translateY(0);
 }
 
 /* Footer */
@@ -603,108 +673,135 @@ body.docketeer-subdomain #root {
   border-top: 1px solid var(--docketeer-border);
 }
 
-.footer-content-split {
+.docketeer-page .footer-content-split {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
 }
 
-.footer-left {
+.docketeer-page .footer-left {
   text-align: left;
 }
 
-.footer-right {
+.docketeer-page .footer-right {
   text-align: right;
 }
 
-.footer-section h4 {
+.docketeer-page .footer-section h4 {
   font-size: 1.125rem;
   margin: 0 0 0.75rem;
   color: var(--docketeer-text-primary);
 }
 
-.footer-links {
+.docketeer-page .footer-links {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
 
-.footer-links a {
+.docketeer-page .footer-links a {
   color: var(--docketeer-text-secondary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
+.docketeer-page .footer-links a:hover {
   color: var(--docketeer-primary);
 }
 
-.footer-section p {
+.docketeer-page .footer-section p {
   color: var(--docketeer-text-tertiary);
   margin: 0 0 0.5rem;
 }
 
-.rubic-link {
+.docketeer-page .rubic-link {
   color: var(--docketeer-primary);
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s ease;
 }
 
-.rubic-link:hover {
+.docketeer-page .rubic-link:hover {
   opacity: 0.8;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-grid {
+  .docketeer-page .hero-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .hero-stats {
+  .docketeer-page .hero-stats {
     max-width: 400px;
     margin: 0 auto;
   }
   
-  .workflow-simple {
+  .docketeer-page .workflow-simple {
     grid-template-columns: 1fr;
   }
   
-  .features-grid-compact {
+  .docketeer-page .features-grid-compact {
     grid-template-columns: 1fr;
   }
   
-  .quickstart-grid {
+  .docketeer-page .quickstart-grid {
     grid-template-columns: 1fr;
   }
   
-  .install-alternatives {
+  .docketeer-page .install-alternatives {
     grid-template-columns: 1fr;
   }
   
-  .install-steps {
+  .docketeer-page .install-steps {
     gap: 1rem;
   }
   
-  .step-number {
+  .docketeer-page .step-number {
     width: 28px;
     height: 28px;
     font-size: 0.875rem;
   }
   
-  .visuals-grid {
+  .docketeer-page .visuals-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   
-  .footer-content-split {
+  .docketeer-page .visual-item {
+    padding: 1.5rem;
+  }
+  
+  .docketeer-page .visual-item h3 {
+    font-size: 1.25rem;
+  }
+  
+  .docketeer-page .visual-content {
+    min-height: 200px;
+  }
+  
+  .docketeer-page .visuals-cta {
+    margin-top: 3rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .docketeer-page .visuals-cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  .docketeer-page .btn-cta-large {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .docketeer-page .footer-content-split {
     flex-direction: column;
     gap: 2rem;
   }
   
-  .footer-left,
-  .footer-right {
+  .docketeer-page .footer-left,
+  .docketeer-page .footer-right {
     text-align: left;
   }
   

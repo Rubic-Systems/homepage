@@ -84,11 +84,11 @@ body.tkyo-subdomain #root {
 /* Use global.css container styles */
 
 /* Theme Toggle */
-.theme-toggle {
+.tkyo-page .theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 100;
+  z-index: 1000;
   background: var(--tkyo-bg-primary);
   border: 1px solid var(--tkyo-border);
   border-radius: 8px;
@@ -103,25 +103,107 @@ body.tkyo-subdomain #root {
   box-shadow: 0 2px 4px var(--tkyo-shadow);
 }
 
-.theme-toggle:hover {
+.tkyo-page .theme-toggle:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px var(--tkyo-shadow-hover);
 }
 
 /* Compact Hero */
 .tkyo-hero-compact {
+  position: relative;
   padding: 3rem 0;
   background: linear-gradient(to bottom, var(--tkyo-bg-secondary), var(--tkyo-bg-primary));
+  overflow: hidden;
 }
 
-.hero-grid {
+/* Hero Video Background */
+.tkyo-page .hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.tkyo-page .hero-video {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+.tkyo-page .hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4)
+  );
+  z-index: 1;
+}
+
+/* Darker overlay in dark mode for better text contrast */
+[data-theme="dark"] .tkyo-page .hero-video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+/* Ensure content appears above video */
+.tkyo-hero-compact .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Override text colors for video background - both light and dark modes */
+.tkyo-hero-compact .tkyo-title {
+  color: #00D9FF; /* Keep primary color as it's already bright */
+}
+
+.tkyo-hero-compact .tkyo-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.tkyo-hero-compact .tkyo-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Hero stats styling for video background */
+.tkyo-hero-compact .tkyo-page .hero-stats {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tkyo-hero-compact .tkyo-page .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tkyo-hero-compact .tkyo-page .stat-value {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.tkyo-page .hero-grid {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1.5fr 1fr;
   gap: 3rem;
   align-items: center;
 }
 
-.hero-content {
+.tkyo-page .hero-content {
   max-width: 600px;
 }
 
@@ -147,14 +229,14 @@ body.tkyo-subdomain #root {
   line-height: 1.6;
 }
 
-.hero-buttons {
+.tkyo-page .hero-buttons {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.btn-primary,
-.btn-secondary {
+.tkyo-page .btn-primary,
+.tkyo-page .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -168,30 +250,30 @@ body.tkyo-subdomain #root {
   border: none;
 }
 
-.btn-primary {
+.tkyo-page .btn-primary {
   background: var(--tkyo-primary);
   color: white;
 }
 
-.btn-primary:hover {
+.tkyo-page .btn-primary:hover {
   background: var(--tkyo-primary-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px var(--tkyo-shadow-hover);
 }
 
-.btn-secondary {
+.tkyo-page .btn-secondary {
   background: var(--tkyo-bg-primary);
   color: var(--tkyo-text-primary);
   border: 1px solid var(--tkyo-border);
 }
 
-.btn-secondary:hover {
+.tkyo-page .btn-secondary:hover {
   background: var(--tkyo-bg-secondary);
   transform: translateY(-1px);
   box-shadow: 0 4px 8px var(--tkyo-shadow-hover);
 }
 
-.hero-stats {
+.tkyo-page .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -199,13 +281,14 @@ body.tkyo-subdomain #root {
   background: var(--tkyo-bg-primary);
   border: 1px solid var(--tkyo-border);
   border-radius: 8px;
+  min-width: 280px;
 }
 
-.stat-item {
+.tkyo-page .stat-item {
   text-align: center;
 }
 
-.stat-label {
+.tkyo-page .stat-label {
   display: block;
   font-size: 0.75rem;
   color: var(--tkyo-text-muted);
@@ -214,7 +297,7 @@ body.tkyo-subdomain #root {
   margin-bottom: 0.25rem;
 }
 
-.stat-value {
+.tkyo-page .stat-value {
   display: block;
   font-size: 1.125rem;
   font-weight: 700;
@@ -273,13 +356,13 @@ body.tkyo-subdomain #root {
   margin: 0;
 }
 
-.features-grid-compact {
+.tkyo-page .features-grid-compact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.5rem;
 }
 
-.feature-item {
+.tkyo-page .feature-item {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -290,13 +373,13 @@ body.tkyo-subdomain #root {
   transition: all 0.2s ease;
 }
 
-.feature-item:hover {
+.tkyo-page .feature-item:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--tkyo-shadow-hover);
   border-color: var(--tkyo-primary);
 }
 
-.feature-icon-small {
+.tkyo-page .feature-icon-small {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
@@ -308,13 +391,13 @@ body.tkyo-subdomain #root {
   border-radius: 6px;
 }
 
-.feature-content h3 {
+.tkyo-page .feature-content h3 {
   font-size: 1.125rem;
   margin: 0 0 0.5rem;
   color: var(--tkyo-text-primary);
 }
 
-.feature-content p {
+.tkyo-page .feature-content p {
   font-size: 0.875rem;
   color: var(--tkyo-text-secondary);
   margin: 0;
@@ -334,20 +417,20 @@ body.tkyo-subdomain #root {
   color: var(--tkyo-text-primary);
 }
 
-.quickstart-grid {
+.tkyo-page .quickstart-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
 }
 
-.code-section {
+.tkyo-page .code-section {
   background: var(--tkyo-bg-primary);
   border: 1px solid var(--tkyo-border);
   border-radius: 8px;
   overflow: hidden;
 }
 
-.code-header {
+.tkyo-page .code-header {
   padding: 0.75rem 1rem;
   background: var(--tkyo-bg-tertiary);
   border-bottom: 1px solid var(--tkyo-border);
@@ -357,7 +440,7 @@ body.tkyo-subdomain #root {
 }
 
 /* Light mode code blocks */
-.code-block {
+.tkyo-page .code-block {
   padding: 1rem;
   margin: 0;
   overflow-x: auto;
@@ -365,7 +448,7 @@ body.tkyo-subdomain #root {
   border: 1px solid #e0e0e0;
 }
 
-.code-block code {
+.tkyo-page .code-block code {
   font-family: 'Consolas', 'Monaco', 'SF Mono', 'Inconsolata', monospace;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -373,51 +456,51 @@ body.tkyo-subdomain #root {
 }
 
 /* Light mode syntax highlighting for bash/shell */
-.code-block.bash .cmd {
+.tkyo-page .code-block.bash .cmd {
   color: #a626a4; /* Purple for commands */
   font-weight: 500;
 }
 
-.code-block.bash .arg {
+.tkyo-page .code-block.bash .arg {
   color: #0184bc; /* Blue for arguments */
 }
 
-.code-block.bash .pkg {
+.tkyo-page .code-block.bash .pkg {
   color: #986801; /* Brown for package names */
 }
 
-.code-block.bash .flag {
+.tkyo-page .code-block.bash .flag {
   color: #e45649; /* Red for flags */
 }
 
-.code-block.bash .path {
+.tkyo-page .code-block.bash .path {
   color: #986801; /* Brown for paths */
 }
 
-.code-block.bash .comment {
+.tkyo-page .code-block.bash .comment {
   color: #50a14f; /* Green for comments */
   font-style: italic;
 }
 
 /* Light mode syntax highlighting for JavaScript */
-.code-block.js .keyword {
+.tkyo-page .code-block.js .keyword {
   color: #a626a4; /* Purple for keywords */
   font-weight: 500;
 }
 
-.code-block.js .var {
+.tkyo-page .code-block.js .var {
   color: #0184bc; /* Blue for variables */
 }
 
-.code-block.js .string {
+.tkyo-page .code-block.js .string {
   color: #50a14f; /* Green for strings */
 }
 
-.code-block.js .func {
+.tkyo-page .code-block.js .func {
   color: #c18401; /* Gold for functions */
 }
 
-.code-block.js .comment {
+.tkyo-page .code-block.js .comment {
   color: #a0a1a7; /* Gray for comments */
   font-style: italic;
 }
@@ -433,73 +516,73 @@ body.tkyo-subdomain #root {
 }
 
 /* Dark mode syntax highlighting for bash/shell */
-[data-theme="dark"] .code-block.bash .cmd {
+[data-theme="dark"] .tkyo-page .code-block.bash .cmd {
   color: #dcdcaa; /* Yellow for commands */
 }
 
-[data-theme="dark"] .code-block.bash .arg {
+[data-theme="dark"] .tkyo-page .code-block.bash .arg {
   color: #9cdcfe; /* Light blue for arguments */
 }
 
-[data-theme="dark"] .code-block.bash .pkg {
+[data-theme="dark"] .tkyo-page .code-block.bash .pkg {
   color: #ce9178; /* Orange for package names */
 }
 
-[data-theme="dark"] .code-block.bash .flag {
+[data-theme="dark"] .tkyo-page .code-block.bash .flag {
   color: #c586c0; /* Purple for flags */
 }
 
-[data-theme="dark"] .code-block.bash .path {
+[data-theme="dark"] .tkyo-page .code-block.bash .path {
   color: #ce9178; /* Orange for paths */
 }
 
-[data-theme="dark"] .code-block.bash .comment {
+[data-theme="dark"] .tkyo-page .code-block.bash .comment {
   color: #6a9955; /* Green for comments */
 }
 
 /* Dark mode syntax highlighting for JavaScript */
-[data-theme="dark"] .code-block.js .keyword {
+[data-theme="dark"] .tkyo-page .code-block.js .keyword {
   color: #569cd6; /* Blue for keywords */
 }
 
-[data-theme="dark"] .code-block.js .var {
+[data-theme="dark"] .tkyo-page .code-block.js .var {
   color: #9cdcfe; /* Light blue for variables */
 }
 
-[data-theme="dark"] .code-block.js .string {
+[data-theme="dark"] .tkyo-page .code-block.js .string {
   color: #ce9178; /* Orange for strings */
 }
 
-[data-theme="dark"] .code-block.js .func {
+[data-theme="dark"] .tkyo-page .code-block.js .func {
   color: #dcdcaa; /* Yellow for functions */
 }
 
-[data-theme="dark"] .code-block.js .comment {
+[data-theme="dark"] .tkyo-page .code-block.js .comment {
   color: #6a9955; /* Green for comments */
 }
 
-.info-section {
+.tkyo-page .info-section {
   background: var(--tkyo-bg-primary);
   border: 1px solid var(--tkyo-border);
   border-radius: 8px;
   padding: 1.5rem;
 }
 
-.info-section h3 {
+.tkyo-page .info-section h3 {
   font-size: 1.125rem;
   margin: 0 0 1rem;
   color: var(--tkyo-text-primary);
 }
 
-.capabilities-list,
-.dependencies-list {
+.tkyo-page .capabilities-list,
+.tkyo-page .dependencies-list {
   list-style: none;
   padding: 0;
   margin: 0 0 1.5rem;
 }
 
-.capabilities-list li,
-.dependencies-list li {
+.tkyo-page .capabilities-list li,
+.tkyo-page .dependencies-list li {
   position: relative;
   padding-left: 2rem;
   margin-bottom: 0.5rem;
@@ -507,8 +590,8 @@ body.tkyo-subdomain #root {
   color: var(--tkyo-text-secondary);
 }
 
-.capabilities-list li::before,
-.dependencies-list li::before {
+.tkyo-page .capabilities-list li::before,
+.tkyo-page .dependencies-list li::before {
   content: '✓';
   position: absolute;
   left: 0;
@@ -531,14 +614,14 @@ body.tkyo-subdomain #root {
   color: var(--tkyo-text-primary);
 }
 
-.cli-images-grid {
+.tkyo-page .cli-images-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.cli-image-item {
+.tkyo-page .cli-image-item {
   background: var(--tkyo-bg-primary);
   border: 1px solid var(--tkyo-border);
   border-radius: 8px;
@@ -546,14 +629,14 @@ body.tkyo-subdomain #root {
   overflow: hidden;
 }
 
-.cli-image-item h3 {
+.tkyo-page .cli-image-item h3 {
   font-size: 1.25rem;
   margin: 0 0 1rem;
   color: var(--tkyo-text-primary);
   text-align: center;
 }
 
-.cli-image-item img {
+.tkyo-page .cli-image-item img {
   width: 100%;
   height: auto;
   display: block;
@@ -565,13 +648,13 @@ body.tkyo-subdomain #root {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cli-image-item img:hover {
+.tkyo-page .cli-image-item img:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 900px) {
-  .cli-images-grid {
+  .tkyo-page .cli-images-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -584,28 +667,28 @@ body.tkyo-subdomain #root {
   border-top: 1px solid var(--tkyo-border);
 }
 
-.footer-content {
+.tkyo-page .footer-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.footer-content-split {
+.tkyo-page .footer-content-split {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
 }
 
-.footer-left {
+.tkyo-page .footer-left {
   text-align: left;
 }
 
-.footer-right {
+.tkyo-page .footer-right {
   text-align: right;
 }
 
-.footer-section h4 {
+.tkyo-page .footer-section h4 {
   font-size: 1rem;
   margin: 0 0 0.75rem;
   color: var(--tkyo-text-primary);
@@ -613,72 +696,72 @@ body.tkyo-subdomain #root {
   letter-spacing: 0.05em;
 }
 
-.footer-section p {
+.tkyo-page .footer-section p {
   font-size: 0.875rem;
   color: var(--tkyo-text-secondary);
   margin: 0 0 0.5rem;
   line-height: 1.5;
 }
 
-.footer-links {
+.tkyo-page .footer-links {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.footer-links a,
-.rubic-link {
+.tkyo-page .footer-links a,
+.tkyo-page .rubic-link {
   font-size: 0.875rem;
   color: var(--tkyo-primary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer-links a:hover,
-.rubic-link:hover {
+.tkyo-page .footer-links a:hover,
+.tkyo-page .rubic-link:hover {
   color: var(--tkyo-primary-dark);
   text-decoration: underline;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-grid {
+  .tkyo-page .hero-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .hero-stats {
+  .tkyo-page .hero-stats {
     max-width: 300px;
   }
   
-  .features-grid-compact {
+  .tkyo-page .features-grid-compact {
     grid-template-columns: 1fr;
   }
   
-  .quickstart-grid {
+  .tkyo-page .quickstart-grid {
     grid-template-columns: 1fr;
   }
   
-  .workflow-simple {
+  .tkyo-page .workflow-simple {
     flex-direction: column;
   }
   
-  .footer-content {
+  .tkyo-page .footer-content {
     grid-template-columns: 1fr;
     text-align: center;
   }
   
-  .footer-links {
+  .tkyo-page .footer-links {
     justify-content: center;
   }
   
-  .footer-content-split {
+  .tkyo-page .footer-content-split {
     flex-direction: column;
     gap: 1.5rem;
   }
   
-  .footer-left,
-  .footer-right {
+  .tkyo-page .footer-left,
+  .tkyo-page .footer-right {
     text-align: left;
   }
 }
