@@ -61,6 +61,25 @@ export const Docketeer = () => {
     <div className="docketeer-page">
       {/* Compact Hero Section */}
       <section className="docketeer-hero-compact">
+        {/* Background Video */}
+        <div className="hero-video-background">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="hero-video"
+          >
+            <source 
+              src="/server_timelapse.mp4" 
+              type="video/mp4"
+            />
+            {/* Fallback for browsers that don't support video */}
+            Your browser does not support the video tag.
+          </video>
+          <div className="hero-video-overlay"></div>
+        </div>
+        
         <button
           className="theme-toggle"
           onClick={toggleTheme}

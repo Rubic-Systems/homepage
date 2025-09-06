@@ -88,7 +88,7 @@ body.docketeer-subdomain #root {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 100;
+  z-index: 1000;
   background: var(--docketeer-bg-primary);
   border: 1px solid var(--docketeer-border);
   border-radius: 8px;
@@ -110,8 +110,93 @@ body.docketeer-subdomain #root {
 
 /* Compact Hero */
 .docketeer-hero-compact {
+  position: relative;
   padding: 3rem 0;
   background: linear-gradient(to bottom, var(--docketeer-bg-secondary), var(--docketeer-bg-primary));
+  overflow: hidden;
+}
+
+/* Hero Video Background */
+.docketeer-page .hero-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.docketeer-page .hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.docketeer-page .hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+  );
+  z-index: 1;
+}
+
+/* Darker overlay in dark mode for better text contrast */
+[data-theme="dark"] .docketeer-page .hero-video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+/* Ensure content appears above video */
+.docketeer-hero-compact .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Override text colors for video background - both light and dark modes */
+.docketeer-hero-compact .docketeer-title {
+  background: linear-gradient(135deg, #3385FF 0%, #5891F5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.docketeer-hero-compact .docketeer-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.docketeer-hero-compact .docketeer-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Hero stats styling for video background */
+.docketeer-hero-compact .docketeer-page .hero-stats {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.docketeer-hero-compact .docketeer-page .stat-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.docketeer-hero-compact .docketeer-page .stat-value {
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .docketeer-page .hero-grid {
